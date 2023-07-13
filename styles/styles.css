@@ -1,0 +1,40 @@
+body {
+   background-color: cadetblue;
+}
+
+.text-align-center {
+   text-align: center;
+}
+
+.description {
+   margin: 0 auto;
+}
+
+.input-container {
+   display: flex;
+   justify-content: center;
+}
+
+.btn-primary {
+   margin-left: 1em;
+}
+
+@keyframes appear {
+   from { opacity: 0;}
+   to {opacity: 100;}
+}
+
+.fade-in-output {
+   animation-name: appear;
+   animation-duration: .5s;
+}
+
+.fade-in-result {
+   animation-name: appear;
+   animation-duration: 5s;
+}
+
+.hidden-output {
+   opacity: 0;
+}
+
