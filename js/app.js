@@ -1,35 +1,63 @@
-const words = ['hello', 'blue', 'estelle', 'marissa', 'ring', 'wedding', 'sally', 'john', 'horse', 'mouse', 'house', 'train', 'appropriate'];
+const words = [
+    'hello', 'blue', 'estelle', 'anniversary', 'ring', 'wedding', 'honey', 'john', 'horse', 'mouse', 'house', 
+    'train', 'appropriate', 'architecture', 'world', 'moon', 'poetry', 'microsoft', 'apple', 'saving', 'document',
+    'output', 'listening', 'created', 'soccer', 'jamestown', 'district', 'rivalry', 'arlington', 'california',
+    'handle', 'situation', 'price', 'grimmace', 'submitted', 'university', 'brain', 'power', 'wisely', 'proud',
+    'alive', 'alien', 'toils', 'cranes', 'bratty', 'childish', 'orange', 'steelblue', 'jupiter', 'graciously'
+];
 let chosenWord = '';
 const submitEvent = document.getElementById('submit-action');
 const startBtn = document.getElementById('start-game');
 const outputContainer = document.getElementById('typewritter-output');
 const userInput = document.getElementById('user-input');
 const repeatBtn = document.getElementById('repeat');
+const revealBtn = document.getElementById('reveal');
 
-submitEvent.addEventListener('click', handleClick);
+submitEvent.addEventListener('click', handleSubmitClick);
 startBtn.addEventListener('click', handleStartGame);
 repeatBtn.addEventListener('click', handleRepeatAction);
+revealBtn.addEventListener('click', handleRevealAction);
 
 function randomTimeout() {
     return Math.floor(Math.random() * 1500);
 }
 
+function handleRevealAction() {
+    outputContainer.innerText = chosenWord;
+    outputContainer.className = 'fade-in-result';
+}
+
 function handleRepeatAction() {
     const hiddenEl = document.getElementsByClassName('hidden-output');
-    for(let i = 0; i < hiddenEl.length; i++){
-        if(hiddenEl[i].classList.contains('fade-in-output')){
-            hiddenEl[i].classList.remove('fade-in-output');
+    console.log(hiddenEl.length === 0);
+
+    if(hiddenEl.length === 0) {
+        // if user clicked Submit, got the wrong answer, then clicked Repeat
+        if(outputContainer.classList.contains('fade-in-result')){
+            outputContainer.classList.remove('fade-in-result');
         }
 
-        if(hiddenEl[i].classList.contains('fade-in-result')){
-            hiddenEl[i].classList.remove('fade-in-result');
+        outputContainer.innerText = '';
+
+        chosenWord.split('').forEach(val => {
+            insertSpanElement(val);
+        });
+    } else {
+        for(let i = 0; i < hiddenEl.length; i++){
+            if(hiddenEl[i].classList.contains('fade-in-output')){
+                hiddenEl[i].classList.remove('fade-in-output');
+            }
         }
-   }
+    }
 
     triggerFadeInEffect();
 }
 
 function handleStartGame() {
+    if(outputContainer.classList.contains('fade-in-result')) {
+        outputContainer.classList.remove('fade-in-result')
+    }
+
     outputContainer.innerText = '';
     const randomIdx = Math.floor(Math.random() * (words.length));
     chosenWord = words[randomIdx].toUpperCase();
@@ -41,7 +69,7 @@ function handleStartGame() {
     triggerFadeInEffect();
 }
 
-function handleClick() {
+function handleSubmitClick() {
     const guess = userInput.value;
     const correct = guess.toLowerCase() === chosenWord.toLowerCase();
 
@@ -60,10 +88,10 @@ function insertSpanElement(val) {
 
 function triggerFadeInEffect() {
     const hiddenEl = document.getElementsByClassName('hidden-output');
-   for(let i = 0; i < hiddenEl.length; i++){
+    for(let i = 0; i < hiddenEl.length; i++){
         setTimeout(() => {
             hiddenEl[i].className = 'hidden-output fade-in-output';
         }, randomTimeout());
-   }
+    }
 }
 
