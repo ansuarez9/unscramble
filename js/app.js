@@ -77,7 +77,7 @@ function handleStartGame() {
 }
 
 function handleSubmitClick() {
-    const guess = userInput.value;
+    const guess = userInput.value.trim();
     const correct = guess.toLowerCase() === chosenWord.toLowerCase();
 
     outputContainer.innerText = correct ? 'CORRECT!' : 'Sorry, Guess Again!';
