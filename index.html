@@ -10,9 +10,12 @@
 </head>
 <body>
     <div class="container mt-3">
-        <p class="description mb-4 w-75">
-            Press <strong>Start Unscrabbling!</strong> and a word will magically appear, however it's your job to guess what it says. It could be a any word, even names are fair game. Can you unscramble it?
-        </p>
+       
+        <section class="description mb-4 w-75">
+            <span id="instructions">Instructions</span>
+            <p>Press <strong>Start Unscrabbling!</strong> and a word will magically appear, however it's your job to guess what it says. 
+                It could be a any word, even names are fair game. Can you unscramble it?</p>
+        </section>
         <!-- add ability to select different categories: names, places, hobbies, colors, anything goes (wildcard) -->
         <!-- add different difficulty levels -->
         <div class="action-buttons">
@@ -39,7 +42,7 @@
         </div>
         <div class="output-container text-align-center p-5 mt-4">
             <h1 id="typewritter-output"></h1>
-            <h5 class="error-message">Press <strong>Start Unscrabbling!</strong> or enter a guess!</h5>
+            <h5 class="error-message">Press <strong id="button-text"></strong> or enter a guess!</h5>
         </div>
     </div>
 

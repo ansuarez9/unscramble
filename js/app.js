@@ -1,12 +1,19 @@
+// 105 words; last word is corollary
 let words = [
     'hello', 'blue', 'estelle', 'anniversary', 'ring', 'wedding', 'honey', 'john', 'horse', 'mouse', 'house', 
     'train', 'appropriate', 'architecture', 'world', 'moon', 'poetry', 'microsoft', 'apple', 'saving', 'document',
     'output', 'listening', 'created', 'soccer', 'jamestown', 'district', 'rivalry', 'arlington', 'california',
-    'handle', 'situation', 'price', 'grimmace', 'submitted', 'university', 'brain', 'power', 'wisely', 'proud',
+    'handle', 'situation', 'price', 'grimace', 'submitted', 'university', 'brain', 'power', 'wisely', 'proud',
     'tortoise', 'turkish', 'cloudy', 'zebra', 'zombie', 'kansas', 'mathematical', 'typewriter', 'sprout', 'traveling',
     'alive', 'alien', 'toils', 'cranes', 'bratty', 'childish', 'orange', 'steelblue', 'jupiter', 'graciously', 'feverishly',
-    'brackets', 'transitioning', 'incorrect', 'weeding'
+    'brackets', 'transitioning', 'incorrect', 'weeding', 'string', 'marissa', 'roberto', 'football', 'baseball', 'tennis',
+    'hockey', 'basketball', 'elements', 'agriculture', 'keyboard', 'guitar', 'classical', 'theft', 'washington', 'amsterdam',
+    'europe', 'saturn', 'submit', 'zoology', 'theoretical', 'spices', 'traitor', 'privately', 'scrabble', 'drafts', 'hamster',
+    'hipster', 'finish', 'guessing', 'username', 'password', 'middle', 'large', 'extras', 'smaller', 'stratosphere', 'grounded',
+    'mustache', 'corollary'
 ];
+
+let playableList = [];
 let chosenWord = '';
 let attempts;
 
@@ -77,8 +84,26 @@ function resetGame() {
     repeatBtn.setAttribute('disabled', 'disabled');
 }
 
+function createPlayableList() {
+    let length = 0;
+    while(length < 3){
+        const randomIdx = Math.floor(Math.random() * (words.length));
+        const randomWord = words[randomIdx];
+        playableList.push(randomWord);
+        words = words.filter(w => w !== randomWord);
+        length++;
+    }
+    console.log(playableList);
+}
+
 function handleStartGame() {
     resetGame();
+
+    if(playableList.length === 0){
+        createPlayableList();
+        startBtn.innerText='Next Word';
+    }
+
     submitBtn.removeAttribute('disabled');
 
     attempts = 1;
@@ -87,9 +112,9 @@ function handleStartGame() {
     }
 
     outputContainer.innerText = '';
-    const randomIdx = Math.floor(Math.random() * (words.length));
-    chosenWord = words[randomIdx].toUpperCase();
-    words = words.filter(w => w.toUpperCase() !== chosenWord);
+    const randomIdx = Math.floor(Math.random() * (playableList.length));
+    chosenWord = playableList[randomIdx].toUpperCase();
+    playableList = playableList.filter(w => w.toUpperCase() !== chosenWord);
 
     chosenWord.split('').forEach(val => {
         insertSpanElement(val);
@@ -102,7 +127,11 @@ function handleSubmitClick() {
     const guess = userInput.value.trim();
     const h5El = document.getElementsByTagName('h5')[0];
 
-    if((!(!!chosenWord) && (!!guess)) || ((!!chosenWord) && !(!!guess)) || !(!!chosenWord) || !(!!guess)){
+    if(
+        (!(!!chosenWord) && (!!guess)) || 
+        ((!!chosenWord) && !(!!guess)) || 
+        !(!!chosenWord) || !(!!guess)){
+        document.getElementById('button-text').innerHTML = startBtn.innerText;
         h5El.classList.add('fade-out');
 
         setTimeout(() => {
@@ -110,10 +139,17 @@ function handleSubmitClick() {
         }, 2000);
         return;
     }
+
     const correct = guess.toLowerCase() === chosenWord.toLowerCase();
 
     const resultIdEl = document.getElementById(`result-${attempts}`);
     const attemptContainerIdEl = document.getElementById(`attempt-container-${attempts}`);
+
+    if((correct || attempts === 3) && playableList.length === 0){
+        startBtn.innerText='New Game!';
+    } else if((correct || attempts === 3) && playableList.length === 1) {
+        startBtn.innerText='Last Word';
+    }
 
     if(!correct){
         resultIdEl.classList.add('wrong');

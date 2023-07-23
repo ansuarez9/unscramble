@@ -63,6 +63,22 @@ body {
 
 .description {
    margin: 0 auto;
+   display: flex;
+   flex-flow: column;
+}
+
+.description > span {
+   font-size: .8em;
+   align-self: flex-end;
+   margin-right:6%;
+   margin-bottom: 3%;
+   width: fit-content;
+}
+
+.description > span:hover {
+   text-decoration: underline;
+   opacity: .6;
+   cursor: pointer;
 }
 
 .input-container {
