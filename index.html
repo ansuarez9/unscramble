@@ -16,8 +16,8 @@
         <!-- add ability to select different categories: names, places, hobbies, colors, anything goes (wildcard) -->
         <!-- add different difficulty levels -->
         <div class="action-buttons">
-            <button type="button" id="start-game" class="btn btn-success">Play Game!</button>
-            <!-- <button type="button" id="repeat" class="btn btn-info" disabled>Try Again</button> -->
+            <button type="button" id="start-game" class="btn btn-success">Start/New Word</button>
+            <button type="button" id="repeat" class="btn btn-secondary" disabled>Try Again</button>
         </div>
         <h3 class="attempts mb-4 mt-4">
             <span id="attempt-container-1" class="attempt-container">
@@ -35,10 +35,11 @@
         </h3>
         <div class="input-container">
             <input class="form-control w-50" id="user-input" type="text" placeholder="Guess the word...">
-            <button type="button" id="submit-action" class="btn btn-primary">Submit</button>
+            <button type="button" id="submit-action" class="btn btn-primary" disabled>Guess</button>
         </div>
         <div class="output-container text-align-center p-5 mt-4">
             <h1 id="typewritter-output"></h1>
+            <h5 class="error-message">Press <strong>Start/New Word</strong> or enter a guess!</h5>
         </div>
     </div>
 

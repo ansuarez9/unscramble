@@ -1,5 +1,6 @@
 body {
-   background-color: cadetblue;
+   /* background-color: cadetblue; */
+   background-color: burlywood;
 }
 
 .container {
@@ -77,22 +78,36 @@ body {
    text-align: center;
 }
 
-@keyframes appear {
+@keyframes fade-in {
    from { opacity: 0;}
    to {opacity: 100;}
 }
 
+@keyframes fade-out {
+   from { opacity: 100;}
+   to {opacity: 0;}
+}
+
 .fade-in-output {
-   animation-name: appear;
+   animation-name: fade-in;
    animation-duration: .5s;
 }
 
 .fade-in-result {
-   animation-name: appear;
+   animation-name: fade-in;
    animation-duration: 5s;
 }
 
 .hidden-output {
+   opacity: 0;
+}
+
+.fade-out {
+   animation-name: fade-out;
+   animation-duration: 2s;
+}
+
+.error-message {
    opacity: 0;
 }
 

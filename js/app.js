@@ -14,14 +14,21 @@ const submitBtn = document.getElementById('submit-action');
 const startBtn = document.getElementById('start-game');
 const outputContainer = document.getElementById('typewritter-output');
 const userInput = document.getElementById('user-input');
-// const revealBtn = document.getElementById('reveal');
+const repeatBtn = document.getElementById('repeat');
 
 submitBtn.addEventListener('click', handleSubmitClick);
 startBtn.addEventListener('click', handleStartGame);
-// revealBtn.addEventListener('click', handleRevealAction);
+repeatBtn.addEventListener('click', handleRepeatAction);
+userInput.addEventListener('keypress', handleKeyPress)
 
 function randomTimeout() {
     return Math.floor(Math.random() * 1500);
+}
+
+function handleKeyPress(e) {
+    if(e.key === 'Enter'){
+        handleSubmitClick();
+    }
 }
 
 function handleRevealAction() {
@@ -31,6 +38,7 @@ function handleRevealAction() {
 
 function handleRepeatAction() {
     const hiddenEl = document.getElementsByClassName('hidden-output');
+    repeatBtn.setAttribute('disabled', 'disabled');
 
     if(hiddenEl.length === 0) {
         // if user clicked Submit, got the wrong answer, then clicked Repeat
@@ -65,6 +73,8 @@ function resetGame() {
     resultEls[0].className = 'result';
     resultEls[1].className = 'result';
     resultEls[2].className = 'result';
+
+    repeatBtn.setAttribute('disabled', 'disabled');
 }
 
 function handleStartGame() {
@@ -90,6 +100,16 @@ function handleStartGame() {
 
 function handleSubmitClick() {
     const guess = userInput.value.trim();
+    const h5El = document.getElementsByTagName('h5')[0];
+
+    if((!(!!chosenWord) && (!!guess)) || ((!!chosenWord) && !(!!guess)) || !(!!chosenWord) || !(!!guess)){
+        h5El.classList.add('fade-out');
+
+        setTimeout(() => {
+            h5El.classList.remove('fade-out');
+        }, 2000);
+        return;
+    }
     const correct = guess.toLowerCase() === chosenWord.toLowerCase();
 
     const resultIdEl = document.getElementById(`result-${attempts}`);
@@ -104,7 +124,8 @@ function handleSubmitClick() {
         } else {
             setTimeout(() => {
                 handleRepeatAction();
-            }, 1000);
+                repeatBtn.removeAttribute('disabled');
+            }, 1500);
         }
 
         attempts++;
