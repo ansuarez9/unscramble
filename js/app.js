@@ -1,4 +1,4 @@
-const words = [
+let words = [
     'hello', 'blue', 'estelle', 'anniversary', 'ring', 'wedding', 'honey', 'john', 'horse', 'mouse', 'house', 
     'train', 'appropriate', 'architecture', 'world', 'moon', 'poetry', 'microsoft', 'apple', 'saving', 'document',
     'output', 'listening', 'created', 'soccer', 'jamestown', 'district', 'rivalry', 'arlington', 'california',
@@ -79,6 +79,7 @@ function handleStartGame() {
     outputContainer.innerText = '';
     const randomIdx = Math.floor(Math.random() * (words.length));
     chosenWord = words[randomIdx].toUpperCase();
+    words = words.filter(w => w.toUpperCase() !== chosenWord);
 
     chosenWord.split('').forEach(val => {
         insertSpanElement(val);
