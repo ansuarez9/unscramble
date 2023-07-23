@@ -9,7 +9,7 @@ body {
 
 .action-buttons {
    display: flex;
-   width: 50%;
+   width: 75%;
    justify-content: space-evenly;
    margin: 0 auto;
 }
