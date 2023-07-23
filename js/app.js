@@ -3,8 +3,9 @@ const words = [
     'train', 'appropriate', 'architecture', 'world', 'moon', 'poetry', 'microsoft', 'apple', 'saving', 'document',
     'output', 'listening', 'created', 'soccer', 'jamestown', 'district', 'rivalry', 'arlington', 'california',
     'handle', 'situation', 'price', 'grimmace', 'submitted', 'university', 'brain', 'power', 'wisely', 'proud',
-    'tortoise', 'turkish', 'cloudy', 'zebra', 'zombie', 'kansas', 'mathematical', 'typewritter', 'sprout', 'traveling',
-    'alive', 'alien', 'toils', 'cranes', 'bratty', 'childish', 'orange', 'steelblue', 'jupiter', 'graciously'
+    'tortoise', 'turkish', 'cloudy', 'zebra', 'zombie', 'kansas', 'mathematical', 'typewriter', 'sprout', 'traveling',
+    'alive', 'alien', 'toils', 'cranes', 'bratty', 'childish', 'orange', 'steelblue', 'jupiter', 'graciously', 'feverishly',
+    'brackets', 'transitioning', 'incorrect', 'weeding'
 ];
 let chosenWord = '';
 let attempts;
@@ -13,14 +14,11 @@ const submitBtn = document.getElementById('submit-action');
 const startBtn = document.getElementById('start-game');
 const outputContainer = document.getElementById('typewritter-output');
 const userInput = document.getElementById('user-input');
-const repeatBtn = document.getElementById('repeat');
-const revealBtn = document.getElementById('reveal');
-const attemptsEl = document.getElementById('attempts');
+// const revealBtn = document.getElementById('reveal');
 
 submitBtn.addEventListener('click', handleSubmitClick);
 startBtn.addEventListener('click', handleStartGame);
-repeatBtn.addEventListener('click', handleRepeatAction);
-revealBtn.addEventListener('click', handleRevealAction);
+// revealBtn.addEventListener('click', handleRevealAction);
 
 function randomTimeout() {
     return Math.floor(Math.random() * 1500);
@@ -56,11 +54,24 @@ function handleRepeatAction() {
     triggerFadeInEffect();
 }
 
+function resetGame() {
+    const attemptContainersEls = document.getElementsByClassName('attempt-container');
+    const resultEls = document.getElementsByClassName('result');
+
+    attemptContainersEls[0].className = 'attempt-container';
+    attemptContainersEls[1].className = 'attempt-container';
+    attemptContainersEls[2].className = 'attempt-container';
+
+    resultEls[0].className = 'result';
+    resultEls[1].className = 'result';
+    resultEls[2].className = 'result';
+}
+
 function handleStartGame() {
+    resetGame();
     submitBtn.removeAttribute('disabled');
 
-    attempts = 0;
-    attemptsEl.innerText = attempts;
+    attempts = 1;
     if(outputContainer.classList.contains('fade-in-result')) {
         outputContainer.classList.remove('fade-in-result')
     }
@@ -80,18 +91,27 @@ function handleSubmitClick() {
     const guess = userInput.value.trim();
     const correct = guess.toLowerCase() === chosenWord.toLowerCase();
 
-    outputContainer.innerText = correct ? 'CORRECT!' : 'Sorry, Guess Again!';
-    outputContainer.className = 'fade-in-result';
+    const resultIdEl = document.getElementById(`result-${attempts}`);
+    const attemptContainerIdEl = document.getElementById(`attempt-container-${attempts}`);
 
     if(!correct){
-        attempts++;
-        attemptsEl.innerText = attempts;
+        resultIdEl.classList.add('wrong');
 
         if(attempts === 3){
             handleRevealAction();
             submitBtn.setAttribute('disabled', 'disabled');
+        } else {
+            setTimeout(() => {
+                handleRepeatAction();
+            }, 1000);
         }
+
+        attempts++;
+    } else {
+        resultIdEl.classList.add('correct');
+        handleRevealAction()
     }
+    attemptContainerIdEl.classList.add('rotate-attempt');
 
     userInput.value = ''
 }
