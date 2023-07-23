@@ -16,20 +16,43 @@ let words = [
 let playableList = [];
 let chosenWord = '';
 let attempts;
+let showInstructions = false;
 
 const submitBtn = document.getElementById('submit-action');
 const startBtn = document.getElementById('start-game');
 const outputContainer = document.getElementById('typewritter-output');
 const userInput = document.getElementById('user-input');
 const repeatBtn = document.getElementById('repeat');
+const instructionsLink = document.getElementById('instructions');
+const instructionModalEl = document.getElementById('instruction-modal');
 
 submitBtn.addEventListener('click', handleSubmitClick);
 startBtn.addEventListener('click', handleStartGame);
 repeatBtn.addEventListener('click', handleRepeatAction);
 userInput.addEventListener('keypress', handleKeyPress)
+instructionsLink.addEventListener('click', handleInstructionsClick);
+instructionModalEl.addEventListener('click', handleInstructionsClick);
 
 function randomTimeout() {
     return Math.floor(Math.random() * 1500);
+}
+
+function handleInstructionsClick() {
+    const instructionModalEl = document.getElementById('instruction-modal');
+    showInstructions = !showInstructions;
+
+    if(showInstructions){
+        instructionModalEl.classList.remove('display-none');
+        instructionModalEl.classList.remove('hide-modal');
+        instructionModalEl.classList.add('show-modal');
+    } else {
+        instructionModalEl.classList.add('hide-modal');
+
+        setTimeout(() => {
+            instructionModalEl.classList.add('display-none');
+            instructionModalEl.classList.remove('show-modal');
+        }, 250);
+    }
 }
 
 function handleKeyPress(e) {

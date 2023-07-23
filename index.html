@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container mt-3">
-       
+        <h1 class="title">Strobe Letters</h1>
         <section class="description mb-4 w-75">
             <span id="instructions">Instructions</span>
             <p>Press <strong>Start Unscrabbling!</strong> and a word will magically appear, however it's your job to guess what it says. 
@@ -43,6 +43,17 @@
         <div class="output-container text-align-center p-5 mt-4">
             <h1 id="typewritter-output"></h1>
             <h5 class="error-message">Press <strong id="button-text"></strong> or enter a guess!</h5>
+        </div>
+    </div>
+
+    <div id="instruction-modal" class="instruction-modal display-none">
+        <div class="modal-wrapper">
+            <h3>Instructions</h3>
+
+            <section>
+                A series of letters will appear and disappear in random order.
+                You have 3 chances to guess what the word is. The longer the word the more points you'll tally up.
+            </section>
         </div>
     </div>
 

@@ -7,6 +7,11 @@ body {
    max-width: 650px;
 }
 
+h1.title {
+   text-align: center;
+   margin-bottom: 1.5em;
+}
+
 .action-buttons {
    display: flex;
    width: 85%;
@@ -125,5 +130,37 @@ body {
 
 .error-message {
    opacity: 0;
+}
+
+.instruction-modal {
+   width: 100%;
+   height: 100vh;
+   position: absolute;
+   background: rgba(14, 13, 14, 0.67);
+   top: 0;
+}
+
+.modal-wrapper {
+   width: 75%;
+   color: #010101;
+   border: 1px solid #010101;
+   background-color: #efefef;
+   margin: 5% auto;
+   border-radius: 10px;
+   padding: 5% 8%;
+}
+
+.display-none {
+   display: none;
+}
+
+.show-modal {
+   animation-name: fade-in;
+   animation-duration: .25s;
+}
+
+.hide-modal {
+   animation-name: fade-out;
+   transition: opacity .25s;
 }
 
