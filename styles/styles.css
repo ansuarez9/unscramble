@@ -2,17 +2,21 @@ body {
    background-color: cadetblue;
 }
 
+.container {
+   max-width: 650px;
+}
+
 .action-buttons {
    display: flex;
-    width: 25%;
-    justify-content: space-evenly;
-    margin: 0 auto;
+   width: 50%;
+   justify-content: space-evenly;
+   margin: 0 auto;
 }
 
 .attempts {
    display: flex;
-   width: 25%;
-   justify-content: space-around;
+   width: 50%;
+   justify-content: space-evenly;
    margin: 0 auto;
 }
 
@@ -35,7 +39,7 @@ body {
 
 .attempt {
    display: inline-block;
-   padding: 6px 0;
+   padding: 9px 0;
    text-align: center;
 }
 
