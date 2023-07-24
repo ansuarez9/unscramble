@@ -204,6 +204,10 @@ h1.title {
    color:#198754;
 }
 
+.coming-soon-ul {
+   padding-left: 0;
+}
+
 .coming-soon-ul > li {
    list-style-type: none;
 }

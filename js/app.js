@@ -172,7 +172,7 @@ function handleSubmitClick() {
     if((correct || attempts === 3) && playableList.length === 0){
         startBtn.innerText='New Game!';
     } else if((correct || attempts === 3) && playableList.length === 1) {
-        startBtn.innerText='Last Word';
+        startBtn.innerText='Final Word in Set';
     }
 
     if(!correct){
