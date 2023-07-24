@@ -108,23 +108,22 @@ function resetGame() {
     repeatBtn.setAttribute('disabled', 'disabled');
 }
 
-function createPlayableList() {
+function createPlayableList(playLength) {
     let length = 0;
-    while(length < 3){
+    while(length < playLength){
         const randomIdx = Math.floor(Math.random() * (words.length));
         const randomWord = words[randomIdx];
         playableList.push(randomWord);
         words = words.filter(w => w !== randomWord);
         length++;
     }
-    console.log(playableList);
 }
 
 function handleStartGame() {
     resetGame();
 
     if(playableList.length === 0){
-        createPlayableList();
+        createPlayableList(5);
         startBtn.innerText='Next Word';
     }
 
