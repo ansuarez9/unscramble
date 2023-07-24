@@ -73,8 +73,8 @@ h1.title {
 }
 
 .description > span {
-   font-size: .8em;
    align-self: flex-end;
+   font-weight: 500;
    margin-right:6%;
    margin-bottom: 3%;
    width: fit-content;
