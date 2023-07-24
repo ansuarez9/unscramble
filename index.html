@@ -12,15 +12,15 @@
     <div class="container mt-3">
         <h1 class="title">Strobe Letters</h1>
         <section class="description mb-4 w-75">
-            <span id="instructions">Instructions</span>
-            <p>Press <strong>Start Unscrabbling!</strong> and a word will magically appear, however it's your job to guess what it says. 
-                It could be a any word, even names are fair game. Can you unscramble it?</p>
+            <span id="instructions">How To Play</span>
+            <p>Press <strong>Start Unscrabbling!</strong> and a word will magically appear, it's your job to guess what it says. 
+                It could be a any word, even names are fair game. Can you unscramble it in 3 guesses or less?</p>
         </section>
         <!-- add ability to select different categories: names, places, hobbies, colors, anything goes (wildcard) -->
         <!-- add different difficulty levels -->
         <div class="action-buttons">
             <button type="button" id="start-game" class="btn btn-success">Start Unscrabbling!</button>
-            <button type="button" id="repeat" class="btn btn-secondary" disabled>Repeat Once</button>
+            <button type="button" id="repeat" class="btn btn-secondary" disabled>Replay</button>
         </div>
         <h3 class="attempts mb-4 mt-4">
             <span id="attempt-container-1" class="attempt-container">
@@ -48,11 +48,58 @@
 
     <div id="instruction-modal" class="instruction-modal display-none">
         <div class="modal-wrapper">
-            <h3>Instructions</h3>
+            <section class="instruction-section">
+                <span id="close-modal" class="close-modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+                <h4><strong>How To Play</strong></h4>
+                <h6>Guess each word in the series in 3 tries or less. Each series contains a set of 3 random words.</h6>
 
-            <section>
-                A series of letters will appear and disappear in random order.
-                You have 3 chances to guess what the word is. The longer the word the more points you'll tally up.
+                <p class="mb-0">After a failed guess:</p>
+                <ul>
+                    <li>The circle with the question mark flips over displaying a <span class="red-text">red</span>.</li>
+                    <li>The word will automatically replay after 1.5 seconds.</li>
+                    <li>You can trigger one replay per unsuccessful guess.</li>
+                    <li>If you can't correctly guess the word after the 3rd try, it automatically reveals.</li>
+                </ul>
+
+                <p class="mb-0">After a correct guess:</p>
+                <ul>
+                    <li>The circle with the question mark flips over displaying a <span class="green-text">green</span>.</li>
+                    <li>The correct word automatically reveals.</li>
+                </ul>
+            </section>
+
+            <hr>
+            <section class="instruction-section">
+                <h6><em>Coming Soon</em></h6>
+                <ul class="coming-soon-ul">
+                    <li>
+                        Difficulty Levels:
+                            <ul>
+                                <li>Easy - 4 characters or less</li>
+                                <li>Moderate - 6 characters or less</li>
+                                <li>Hard - 8 characters or less</li>
+                                <li>Expert - 10 characters or less</li>
+                            </ul>
+                    </li>
+                    <li>
+                        Scoring System:
+                            <ul>
+                                <li>High Score so you can compete against your previous scores and others.</li>
+                                <li>Score will be derived based on the number of characters in the word and the number of guesses taken to solve it.</li>
+                            </ul>
+                    </li>
+                    <li>
+                        Visual Indicator of Words Remaining in the Set:
+                        <ul>
+                            <li>Still in development.</li>
+                            <li><span class="green-text">Green Circle</span> - Word Solved</li>
+                            <li><span class="red-text">Red Circle</span> - Word Not Solved</li>
+                            <li>Number inside of circle indicates the number of guesses it took to solve.</li>
+                        </ul>
+                    </li>
+                </ul>
             </section>
         </div>
     </div>

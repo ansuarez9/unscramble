@@ -150,6 +150,10 @@ h1.title {
    padding: 5% 8%;
 }
 
+.modal-wrapper section ul li {
+   font-size:.9em;
+}
+
 .display-none {
    display: none;
 }
@@ -164,3 +168,42 @@ h1.title {
    transition: opacity .25s;
 }
 
+.close-modal {
+   width: 35px;
+   height: 35px;
+   display: block;
+   float: right;
+}
+
+.close-modal:hover {
+   cursor: pointer;
+   opacity: .4;
+}
+
+.fa-xmark {
+   width: 35px;
+   height: 35px;
+   display: inline-block;
+   background-repeat: no-repeat;
+   background-image: url(../assets/svg/xmark-solid.svg);
+}
+
+.instruction-section > p {
+   font-style: italic;
+}
+
+.red-text, .green-text {
+   font-weight: 800;
+}
+
+.red-text {
+   color:#dc3545;
+}
+
+.green-text {
+   color:#198754;
+}
+
+.coming-soon-ul > li {
+   list-style-type: none;
+}
