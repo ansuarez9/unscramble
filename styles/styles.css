@@ -98,9 +98,9 @@ h1.title {
    text-align: center;
 }
 
-.output-container h1 {
+/* .output-container h1 {
    height: 41px;
-}
+} */
 
 @keyframes fade-in {
    from { opacity: 0;}
@@ -238,7 +238,8 @@ h1.title {
    align-items: center;
    justify-content: space-around;
    font-family: fantasy;
-   font-size: calc(.7vw + 2vh);
+   /* font-size: calc(.7vw + 2vh); */
+   font-size: 25px;
 }
 
 @keyframes fade-in-fade-out {
