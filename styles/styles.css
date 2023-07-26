@@ -222,7 +222,7 @@ h1.title {
 /*********************/
 .plays {
    display: flex;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -237,7 +237,7 @@ h1.title {
    margin-bottom: 10px;
    align-items: center;
    justify-content: space-around;
-   font-size: 25px;
+   font-size: 3vh;
 }
 
 @keyframes fade-in-fade-out {
