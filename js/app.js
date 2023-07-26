@@ -18,6 +18,7 @@ let playableList = [];
 let chosenWord = '';
 let attempts;
 let showInstructions = false;
+let wordCount;
 
 const submitBtn = document.getElementById('submit-action');
 const startBtn = document.getElementById('start-game');
@@ -62,7 +63,9 @@ function handleKeyPress(e) {
     }
 }
 
-function handleRevealAction() {
+function handleRevealAction(solved) {
+    removeWordAtPlayIndicator();
+    addWordSolvedIndicator(solved);
     outputContainer.innerText = chosenWord;
     outputContainer.className = 'fade-in-result';
 }
@@ -124,8 +127,11 @@ function handleStartGame() {
 
     if(playableList.length === 0){
         createPlayableList(5);
+        resetWordSolvedIndicator();
         startBtn.innerText='Next Word';
     }
+
+    wordCount = 5 - playableList.length;
 
     submitBtn.removeAttribute('disabled');
 
@@ -144,6 +150,44 @@ function handleStartGame() {
     });
 
     triggerFadeInEffect();
+    addWordAtPlayIndicator();
+}
+
+function addWordAtPlayIndicator() {
+    document.getElementsByClassName('word')[wordCount].classList.add('at-play');
+}
+
+function removeWordAtPlayIndicator() {
+    document.getElementsByClassName('word')[wordCount].classList.remove('at-play');
+}
+
+function addWordSolvedIndicator(solved) {
+    const wordEl = document.getElementsByClassName('word')[wordCount];
+    if(solved){
+        wordEl.innerText = calculateWordScore();
+        wordEl.classList.add('solved');
+    } else {
+        wordEl.innerText = '0';
+        wordEl.classList.add('not-solved');
+    }
+}
+
+function resetWordSolvedIndicator(){
+    const wordEls = document.getElementsByClassName('word');
+    wordEls[0].className = 'word';
+    wordEls[0].innerText = 'Word';
+    wordEls[1].className = 'word';
+    wordEls[1].innerText = 'Word';
+    wordEls[2].className = 'word';
+    wordEls[2].innerText = 'Word';
+    wordEls[3].className = 'word';
+    wordEls[3].innerText = 'Word';
+    wordEls[4].className = 'word';
+    wordEls[4].innerText = 'Word';
+}
+
+function calculateWordScore() {
+    return '' + chosenWord.length * (4 - attempts);
 }
 
 function handleSubmitClick() {
@@ -178,7 +222,7 @@ function handleSubmitClick() {
         resultIdEl.classList.add('wrong');
 
         if(attempts === 3){
-            handleRevealAction();
+            handleRevealAction(false);
             submitBtn.setAttribute('disabled', 'disabled');
         } else {
             setTimeout(() => {
@@ -190,7 +234,7 @@ function handleSubmitClick() {
         attempts++;
     } else {
         resultIdEl.classList.add('correct');
-        handleRevealAction()
+        handleRevealAction(true)
     }
     attemptContainerIdEl.classList.add('rotate-attempt');
 

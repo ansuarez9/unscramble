@@ -1,5 +1,4 @@
 body {
-   /* background-color: cadetblue; */
    background-color: burlywood;
 }
 
@@ -99,6 +98,10 @@ h1.title {
    text-align: center;
 }
 
+.output-container h1 {
+   height: 41px;
+}
+
 @keyframes fade-in {
    from { opacity: 0;}
    to {opacity: 100;}
@@ -132,6 +135,9 @@ h1.title {
    opacity: 0;
 }
 
+/*********************/
+/* How To Play Modal */
+/*********************/
 .instruction-modal {
    width: 100%;
    position: absolute;
@@ -209,4 +215,71 @@ h1.title {
 
 .coming-soon-ul > li {
    list-style-type: none;
+}
+
+/*********************/
+/* Plays Left Section */
+/*********************/
+.plays {
+   display: flex;
+    width: 75%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.plays > .word {
+   width: 3em;
+   height: 3em;
+   border: 1px dashed #010101;
+   border-radius: 15%;
+   display: inherit;
+   margin-bottom: 10px;
+   align-items: center;
+   justify-content: space-around;
+   font-family: fantasy;
+   font-size: calc(.7vw + 2vh);
+}
+
+@keyframes fade-in-fade-out {
+   from {
+      opacity: 1
+   }
+
+   25% {
+      opacity: .35
+   }
+
+   50% {
+      opacity: .5
+   }
+
+   75% {
+      opacity: .35
+   }
+
+   to {
+      opacity: 1
+   }
+}
+
+.at-play {
+   animation-name: fade-in-fade-out;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+}
+
+.solved, .not-solved {
+   animation-name: fade-in;
+   animation-duration: .5s
+}
+
+.solved {
+   background-color: #198754;
+   border:1px solid #198754;
+}
+
+.not-solved {
+   background-color: #dc3545;
+   border:1px solid #dc3545
 }
