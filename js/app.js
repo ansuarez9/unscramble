@@ -19,6 +19,7 @@ let chosenWord = '';
 let attempts;
 let showInstructions = false;
 let wordCount;
+let previousScore = 0;
 
 const submitBtn = document.getElementById('submit-action');
 const startBtn = document.getElementById('start-game');
@@ -163,11 +164,10 @@ function removeWordAtPlayIndicator() {
 
 function addWordSolvedIndicator(solved) {
     const wordEl = document.getElementsByClassName('word')[wordCount];
+    wordEl.innerText = calculateWordScore(solved);
     if(solved){
-        wordEl.innerText = calculateWordScore();
         wordEl.classList.add('solved');
     } else {
-        wordEl.innerText = '0';
         wordEl.classList.add('not-solved');
     }
 }
@@ -186,8 +186,10 @@ function resetWordSolvedIndicator(){
     wordEls[4].innerText = 'Word';
 }
 
-function calculateWordScore() {
-    return '' + chosenWord.length * (4 - attempts);
+function calculateWordScore(solved) {
+    const wordScore = chosenWord.length * (4 - attempts);
+    previousScore = solved ? wordScore + previousScore : previousScore;
+    return previousScore;
 }
 
 function handleSubmitClick() {
