@@ -68,12 +68,34 @@
                     <li>The word will automatically replay after 1.5 seconds.</li>
                     <li>You can trigger one replay per unsuccessful guess.</li>
                     <li>If you can't correctly guess the word after the 3rd try, it automatically reveals.</li>
+                    <li>The word indicator at the bottom turns <span class="red-text">red</span> and displays the aggregate score so far.</li>
                 </ul>
 
                 <p class="mb-0">After a correct guess:</p>
                 <ul>
                     <li>The circle with the question mark flips over displaying a <span class="green-text">green</span>.</li>
                     <li>The correct word automatically reveals.</li>
+                    <li>The word indicator at the bottom turns <span class="green-text">green</span> and displays the aggregate score for each word solved.</li>
+                </ul>
+                <p class="mb-0">Scoring System:</p>
+                <ul>
+                    <li>The length of the word is multiplied by the remaining guesses plus 1.</li>
+                    <li>Each subsequent word in the series is aggregated once solved. For example,
+                        <div class="scoring-details">
+                            <strong>Word #1: <em>HOUSE</em></strong> and it is guessed correctly on the first try: 
+                                <ul>
+                                    <li><strong>Score: 15</strong> (5 letters * 3 remaining attempts)</li>
+                                </ul>
+                                <strong>Word #2: <em>TREE</em></strong> and it is guessed correctly on the second try: 
+                                <ul>
+                                    <li><strong>Score: 23</strong> (Previous score of 15 + (4 letters * 2 remaining attempts))</li>
+                                </ul>
+                                <strong>Word #3: <em>CHICAGO</em></strong> and is never guessed correctly: 
+                                <ul>
+                                    <li><strong>Score: 23</strong> (Previous score of 23 + (7 letters * 0 remaining attempts))</li>
+                                </ul>
+                        </div>
+                    </li>
                 </ul>
             </section>
 
@@ -90,20 +112,9 @@
                                 <li>Expert - 10 characters or less</li>
                             </ul>
                     </li>
-                    <li>
-                        <em>Scoring System:</em>
-                            <ul>
-                                <li>High Score so you can compete against your previous scores and others.</li>
-                                <li>Score will be derived based on the number of characters in the word and the number of guesses taken to solve it.</li>
-                            </ul>
-                    </li>
-                    <li>
-                        <em>Visual Indicator of Words Remaining in the Set:</em>
+                    <li>Create Your Own Word List.
                         <ul>
-                            <li>Still in development...</li>
-                            <li><span class="green-text">Green Circle</span> - Word Solved</li>
-                            <li><span class="red-text">Red Circle</span> - Word Not Solved</li>
-                            <li>Number inside of circle indicates the number of guesses it took to solve.</li>
+                            <li>Mainly so this game can be played in other languages.</li>
                         </ul>
                     </li>
                 </ul>

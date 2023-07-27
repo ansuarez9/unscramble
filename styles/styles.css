@@ -72,7 +72,7 @@ h1.title {
 }
 
 .description > span {
-   align-self: flex-end;
+   /* align-self: flex-end; */
    font-weight: 500;
    margin-right:6%;
    margin-bottom: 3%;
@@ -209,11 +209,12 @@ h1.title {
    color:#198754;
 }
 
-.coming-soon-ul {
-   padding-left: 0;
+.scoring-details {
+   margin-left: 5%;
 }
 
-.coming-soon-ul > li {
+.coming-soon-ul {
+   padding-left: 0;
    list-style-type: none;
 }
 
