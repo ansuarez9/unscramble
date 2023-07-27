@@ -67,6 +67,7 @@ function handleKeyPress(e) {
 function handleRevealAction(solved) {
     removeWordAtPlayIndicator();
     addWordSolvedIndicator(solved);
+    addDisabledAttr(startBtn, false);
     outputContainer.innerText = chosenWord;
     outputContainer.className = 'fade-in-result';
 }
@@ -109,7 +110,7 @@ function resetGame() {
     resultEls[1].className = 'result';
     resultEls[2].className = 'result';
 
-    repeatBtn.setAttribute('disabled', 'disabled');
+    addDisabledAttr(repeatBtn, true);
 }
 
 function createPlayableList(playLength) {
@@ -120,6 +121,15 @@ function createPlayableList(playLength) {
         playableList.push(randomWord);
         words = words.filter(w => w !== randomWord);
         length++;
+    }
+}
+
+// if disabled is true, then add disabled attribute; else remove disabled attribute
+function addDisabledAttr(el, disabled){
+    if(disabled){
+        el.setAttribute('disabled', 'disabled');
+    } else {
+        el.removeAttribute('disabled');
     }
 }
 
@@ -134,7 +144,8 @@ function handleStartGame() {
 
     wordCount = 5 - playableList.length;
 
-    submitBtn.removeAttribute('disabled');
+    addDisabledAttr(startBtn, true);
+    addDisabledAttr(submitBtn, false);
 
     attempts = 1;
     if(outputContainer.classList.contains('fade-in-result')) {
@@ -215,7 +226,7 @@ function handleSubmitClick() {
     const attemptContainerIdEl = document.getElementById(`attempt-container-${attempts}`);
 
     if((correct || attempts === 3) && playableList.length === 0){
-        startBtn.innerText='New Game!';
+        startBtn.innerText='Start New NSCRBL!';
     } else if((correct || attempts === 3) && playableList.length === 1) {
         startBtn.innerText='Final Word in Set';
     }
@@ -225,11 +236,11 @@ function handleSubmitClick() {
 
         if(attempts === 3){
             handleRevealAction(false);
-            submitBtn.setAttribute('disabled', 'disabled');
+            addDisabledAttr(submitBtn, true);
         } else {
             setTimeout(() => {
                 handleRepeatAction();
-                repeatBtn.removeAttribute('disabled');
+                addDisabledAttr(repeatBtn, false);
             }, 1500);
         }
 
