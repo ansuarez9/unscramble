@@ -1,4 +1,4 @@
-// 115 words; last word is spaniards
+// 125 words; last word is spaniards
 let words = [
     'hello', 'blue', 'estelle', 'anniversary', 'ring', 'wedding', 'honey', 'john', 'horse', 'mouse', 'house', 
     'train', 'appropriate', 'architecture', 'world', 'moon', 'poetry', 'microsoft', 'apple', 'saving', 'document',
@@ -11,7 +11,8 @@ let words = [
     'europe', 'saturn', 'submit', 'zoology', 'theoretical', 'spices', 'traitor', 'privately', 'scrabble', 'drafts', 'hamster',
     'hipster', 'finish', 'guessing', 'username', 'password', 'middle', 'large', 'extras', 'smaller', 'stratosphere', 'grounded',
     'mustache', 'corollary', 'ivory', 'scanners', 'scalpers', 'ticketmaster', 'immunodeficiency', 'scientology', 'grove', 'path',
-    'shooters', 'spaniards'
+    'shooters', 'spaniards', 'wordle', 'descramble', 'decoding', 'jeremiah', 'alice', 'andrew', 'javier', 'greenery',
+    'rejuvenation', 'prisoners'
 ];
 
 let playableList = [];
@@ -226,7 +227,7 @@ function handleSubmitClick() {
     const attemptContainerIdEl = document.getElementById(`attempt-container-${attempts}`);
 
     if((correct || attempts === 3) && playableList.length === 0){
-        startBtn.innerText='Start New NSCRBL!';
+        startBtn.innerText='Start New DSCRMBL!';
     } else if((correct || attempts === 3) && playableList.length === 1) {
         startBtn.innerText='Final Word in Set';
     }
