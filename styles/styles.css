@@ -341,7 +341,6 @@ span.percentage-fill {
    margin-bottom: .5em;
    background-color: green;
    display: inline-block;
-   border-radius: 6px;
 }
 
 span.percentage-fill.fill-effect {
@@ -353,6 +352,7 @@ span.percentage-fill.fill-effect {
 .percentage-marker {
    border-right: 3px solid black;
    margin-top: -13px;
+   margin-left: -3px;
    display: inline-block;
    height: 13px;
    position: absolute;
