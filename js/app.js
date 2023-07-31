@@ -222,49 +222,62 @@ function getHighScore(highScore, score) {
 }
 
 function getHistory(history, score) {
-    // should keep them in order
+    let percentile = 100;
     if(history) {
-        return [...history, score];
+        insertIdx = history.findIndex(s => s > score);
+        if(insertIdx === -1) {
+            // position being at the end
+            history = [...history, score];
+        } else {
+            // position being inserted at (insertIdx + 1) or at beginning
+            history.splice(insertIdx, 0, score);
+            percentile = (((insertIdx + 1) / history.length) * 100);
+        }
+    } else {
+        // starting the array
+        history = [score];
     }
 
-    return [score];
+    return ({
+        history: history,
+        percentile: Math.round(percentile)
+    });
 }
 
 function finalScoreCalculations(score) {
     const cached = JSON.parse(localStorage.getItem('dscrmbl'));
-    let average = calculateScoreAverage(cached?.average, cached?.gamesPlayed, score);
-    let gamesPlayed = (cached?.gamesPlayed + 1) || 1;
-    let highScore = getHighScore(cached?.highScore, score);
-    let history = getHistory(cached?.history, score)
+    const average = calculateScoreAverage(cached?.average, cached?.gamesPlayed, score);
+    const gamesPlayed = (cached?.gamesPlayed + 1) || 1;
+    const highScore = getHighScore(cached?.highScore, score);
+    const historyPercentile = getHistory(cached?.history, score);
 
-    console.log(cached, !!cached);
     const cachedScore = {
         score: score,
         average: average,
         gamesPlayed: gamesPlayed,
         highScore: highScore,
-        history: history
+        history: historyPercentile.history
     }
 
     localStorage.setItem('dscrmbl', JSON.stringify(cachedScore));
 
-    return cachedScore;
+    return {cachedScore, historyPercentile};
 }
 
 function showFinalScoreModal(solved) {
     const finalScore = document.getElementsByClassName('word')[4].innerText;
     scoreEl.innerText = finalScore;
 
-    const finalScores = finalScoreCalculations(Number(finalScore));
-    gamesPlayedEl.innerText = finalScores.gamesPlayed;
-    highScoreEl.innerText = finalScores.highScore;
-    averageScoreEl.innerText = Math.round(finalScores.average);
+    const {cachedScore, historyPercentile} = finalScoreCalculations(Number(finalScore));
+    gamesPlayedEl.innerText = cachedScore.gamesPlayed;
+    highScoreEl.innerText = cachedScore.highScore;
+    averageScoreEl.innerText = Math.round(cachedScore.average);
 
     finalScoreModalEl.classList.remove('display-none');
     finalScoreModalEl.classList.add('show-modal');
 
     setTimeout(() => {
-        const percentage = '63%' //need to calculate
+        const percentage = `${historyPercentile.percentile}%`;
         percentageFillEl.style.width = percentage;
         percentageFillEl.classList.add('fill-effect');
 
