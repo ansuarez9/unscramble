@@ -123,29 +123,36 @@
     </div>
 
     <!-- Final Score -->
-    <div id="final-score-modal" class="modal-container show-modal">
+    <div id="final-score-modal" class="modal-container display-none">
         <div class="modal-wrapper final-score-wrapper">
             <section class="final-score">
                 <h1>Score: <span id="score">186</span></h1>
                 <div>
                     <ul>
-                        <li>Games Played
+                        <li><strong>Games Played</strong>
                             <span id="gamesPlayed">25</span>
                         </li>
-                        <li>High Score
+                        <li><strong>High Score</strong>
                             <span id="highScore">239</span>
                         </li>
-                        <li>Average Score
+                        <li><strong>Average Score</strong>
                             <span id="averageScore">110</span>
                         </li>
-                        <li>Percentile
-                            <span id="percentile">75%</span>
-                        </li>
                     </ul>
+                </div>
+                <div class="percentile-container">
+                    <strong>Percentile</strong>
+                    <div class="percentile">
+                        <span id="percentage-fill" class="percentage-fill"></span>
+                        <span id="marker" class="percentage-marker"></span>
+                        <span id="marker-text" class="marker-text">75%</span>
+                    </div>
                 </div>
             </section>
         </div>
     </div>
+
+    <button onClick="showFinalScoreModal(false)">Trigger modal</button>
 
     <!-- add a score to keep track of people's scores (localstorage) -->
 

@@ -30,6 +30,7 @@ const instructionsLink = document.getElementById('instructions');
 const instructionModalEl = document.getElementById('instruction-modal');
 const finalScoreModalEl = document.getElementById('final-score-modal');
 const scoreEl = document.getElementById('score');
+const percentageFillEl = document.getElementById('percentage-fill');
 
 submitBtn.addEventListener('click', handleSubmitClick);
 startBtn.addEventListener('click', handleStartGame);
@@ -208,6 +209,10 @@ function showFinalScoreModal(solved) {
     scoreEl.innerText = document.getElementsByClassName('word')[4].innerText;
     finalScoreModalEl.classList.remove('display-none');
     finalScoreModalEl.classList.add('show-modal');
+
+    setTimeout(() => {
+        percentageFillEl.classList.add('fill-effect');
+    }, 800)
 }
 
 function handleSubmitClick() {
