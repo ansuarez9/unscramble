@@ -364,3 +364,8 @@ span.percentage-fill.fill-effect {
    margin-left: -8px;
    font-size: .8em;
 }
+
+.marker-text-fade-in {
+   animation-name: fade-in;
+   animation-duration: 1.5s;
+}

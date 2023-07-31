@@ -31,6 +31,7 @@ const instructionModalEl = document.getElementById('instruction-modal');
 const finalScoreModalEl = document.getElementById('final-score-modal');
 const scoreEl = document.getElementById('score');
 const percentageFillEl = document.getElementById('percentage-fill');
+const markerTextEl = document.getElementById('marker-text');
 
 submitBtn.addEventListener('click', handleSubmitClick);
 startBtn.addEventListener('click', handleStartGame);
@@ -212,7 +213,9 @@ function showFinalScoreModal(solved) {
 
     setTimeout(() => {
         percentageFillEl.classList.add('fill-effect');
-    }, 800)
+        markerTextEl.innerText = '75%'; // has to be calculated
+        markerTextEl.classList.add('marker-text-fade-in');
+    }, 1000)
 }
 
 function handleSubmitClick() {
