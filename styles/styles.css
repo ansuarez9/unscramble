@@ -344,7 +344,6 @@ span.percentage-fill {
 }
 
 span.percentage-fill.fill-effect {
-   /* width: 75%; */
    transition-property: width;
    transition-duration: 1.5s;
 }
