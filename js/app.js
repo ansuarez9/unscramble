@@ -1,4 +1,4 @@
-// 125 words; last word is spaniards
+// 125 words - last word is prisoners
 let words = [
     'hello', 'blue', 'estelle', 'anniversary', 'ring', 'wedding', 'honey', 'john', 'horse', 'mouse', 'house', 
     'train', 'appropriate', 'architecture', 'world', 'moon', 'poetry', 'microsoft', 'apple', 'saving', 'document',
@@ -18,9 +18,8 @@ let words = [
 let playableList = [];
 let chosenWord = '';
 let attempts;
-let showInstructions = false;
 let wordCount;
-let previousScore = 0;
+let previousScore;
 
 const submitBtn = document.getElementById('submit-action');
 const startBtn = document.getElementById('start-game');
@@ -29,32 +28,37 @@ const userInput = document.getElementById('user-input');
 const repeatBtn = document.getElementById('repeat');
 const instructionsLink = document.getElementById('instructions');
 const instructionModalEl = document.getElementById('instruction-modal');
+const finalScoreModalEl = document.getElementById('final-score-modal');
+const scoreEl = document.getElementById('score');
+const gamesPlayedEl = document.getElementById('gamesPlayed');
+const highScoreEl = document.getElementById('highScore');
+const averageScoreEl = document.getElementById('averageScore');
+const percentageFillEl = document.getElementById('percentage-fill');
+const markerTextEl = document.getElementById('marker-text');
 
 submitBtn.addEventListener('click', handleSubmitClick);
 startBtn.addEventListener('click', handleStartGame);
 repeatBtn.addEventListener('click', handleRepeatAction);
 userInput.addEventListener('keypress', handleKeyPress)
-instructionsLink.addEventListener('click', handleInstructionsClick);
-instructionModalEl.addEventListener('click', handleInstructionsClick);
+instructionsLink.addEventListener('click', () => handleInstructionsClick(instructionModalEl, true));
+instructionModalEl.addEventListener('click', () => handleInstructionsClick(instructionModalEl, false));
+finalScoreModalEl.addEventListener('click', () => handleInstructionsClick(finalScoreModalEl, false))
 
 function randomTimeout() {
     return Math.floor(Math.random() * 1500);
 }
 
-function handleInstructionsClick() {
-    const instructionModalEl = document.getElementById('instruction-modal');
-    showInstructions = !showInstructions;
-
-    if(showInstructions){
-        instructionModalEl.classList.remove('display-none');
-        instructionModalEl.classList.remove('hide-modal');
-        instructionModalEl.classList.add('show-modal');
+function handleInstructionsClick(modalEl, openModal) {
+    if(openModal){
+        modalEl.classList.remove('display-none');
+        modalEl.classList.remove('hide-modal');
+        modalEl.classList.add('show-modal');
     } else {
-        instructionModalEl.classList.add('hide-modal');
+        modalEl.classList.add('hide-modal');
 
         setTimeout(() => {
-            instructionModalEl.classList.add('display-none');
-            instructionModalEl.classList.remove('show-modal');
+            modalEl.classList.add('display-none');
+            modalEl.classList.remove('show-modal');
         }, 250);
     }
 }
@@ -115,6 +119,7 @@ function resetGame() {
 }
 
 function createPlayableList(playLength) {
+    previousScore = 0;
     let length = 0;
     while(length < playLength){
         const randomIdx = Math.floor(Math.random() * (words.length));
@@ -204,6 +209,83 @@ function calculateWordScore(solved) {
     return previousScore;
 }
 
+function calculateScoreAverage(average, gamesPlayed, score) {
+    const newAverage = ((average * gamesPlayed) + score) / (gamesPlayed + 1);
+    return newAverage || score;
+}
+
+function getHighScore(highScore, score) {
+    if(!(!!highScore)) {
+        return score;
+    }
+    return (score > highScore) ? score : highScore;
+}
+
+function getHistory(history, score) {
+    let percentile = 100;
+    if(history) {
+        insertIdx = history.findIndex(s => s > score);
+        if(insertIdx === -1) {
+            // position being at the end
+            history = [...history, score];
+        } else {
+            // position being inserted at (insertIdx + 1) or at beginning
+            history.splice(insertIdx, 0, score);
+            percentile = (((insertIdx + 1) / history.length) * 100);
+        }
+    } else {
+        // starting the array
+        history = [score];
+    }
+
+    return ({
+        history: history,
+        percentile: Math.round(percentile)
+    });
+}
+
+function finalScoreCalculations(score) {
+    const cached = JSON.parse(localStorage.getItem('dscrmbl'));
+    const average = calculateScoreAverage(cached?.average, cached?.gamesPlayed, score);
+    const gamesPlayed = (cached?.gamesPlayed + 1) || 1;
+    const highScore = getHighScore(cached?.highScore, score);
+    const historyPercentile = getHistory(cached?.history, score);
+
+    const cachedScore = {
+        score: score,
+        average: average,
+        gamesPlayed: gamesPlayed,
+        highScore: highScore,
+        history: historyPercentile.history
+    }
+
+    localStorage.setItem('dscrmbl', JSON.stringify(cachedScore));
+
+    return {cachedScore, historyPercentile};
+}
+
+function showFinalScoreModal(solved) {
+    const finalScore = document.getElementsByClassName('word')[4].innerText;
+    scoreEl.innerText = finalScore;
+
+    const {cachedScore, historyPercentile} = finalScoreCalculations(Number(finalScore));
+    gamesPlayedEl.innerText = cachedScore.gamesPlayed;
+    highScoreEl.innerText = cachedScore.highScore;
+    averageScoreEl.innerText = Math.round(cachedScore.average);
+
+    finalScoreModalEl.classList.remove('display-none');
+    finalScoreModalEl.classList.add('show-modal');
+
+    setTimeout(() => {
+        const percentage = `${historyPercentile.percentile}%`;
+        percentageFillEl.style.width = percentage;
+        percentageFillEl.classList.add('fill-effect');
+
+        markerTextEl.innerText = percentage; // has to be calculated
+        markerTextEl.classList.add('marker-text-fade-in');
+    }, 1000)
+}
+
 function handleSubmitClick() {
     const guess = userInput.value.trim();
     const h5El = document.getElementsByTagName('h5')[0];
@@ -250,6 +332,11 @@ function handleSubmitClick() {
         resultIdEl.classList.add('correct');
         handleRevealAction(true)
     }
+
+    if(playableList.length === 0 && (attempts === 4 || correct)){
+        setTimeout(showFinalScoreModal, 1500);
+    }
+
     attemptContainerIdEl.classList.add('rotate-attempt');
 
     userInput.value = ''
