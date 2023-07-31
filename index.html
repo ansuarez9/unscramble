@@ -53,7 +53,7 @@
     </div>
 
     <!-- How To Play Modal -->
-    <div id="instruction-modal" class="instruction-modal display-none">
+    <div id="instruction-modal" class="modal-container display-none">
         <div class="modal-wrapper">
             <section class="instruction-section">
                 <!-- <span id="close-modal" class="close-modal">
@@ -118,6 +118,31 @@
                         </ul>
                     </li>
                 </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- Final Score -->
+    <div id="final-score-modal" class="modal-container show-modal">
+        <div class="modal-wrapper final-score-wrapper">
+            <section class="final-score">
+                <h1>Score: <span id="score">186</span></h1>
+                <div>
+                    <ul>
+                        <li>Games Played
+                            <span id="gamesPlayed">25</span>
+                        </li>
+                        <li>High Score
+                            <span id="highScore">239</span>
+                        </li>
+                        <li>Average Score
+                            <span id="averageScore">110</span>
+                        </li>
+                        <li>Percentile
+                            <span id="percentile">75%</span>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </div>
     </div>
