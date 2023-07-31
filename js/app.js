@@ -1,4 +1,4 @@
-// 125 words; last word is prisoners
+// 125 words - last word is prisoners
 let words = [
     'hello', 'blue', 'estelle', 'anniversary', 'ring', 'wedding', 'honey', 'john', 'horse', 'mouse', 'house', 
     'train', 'appropriate', 'architecture', 'world', 'moon', 'poetry', 'microsoft', 'apple', 'saving', 'document',
@@ -30,6 +30,9 @@ const instructionsLink = document.getElementById('instructions');
 const instructionModalEl = document.getElementById('instruction-modal');
 const finalScoreModalEl = document.getElementById('final-score-modal');
 const scoreEl = document.getElementById('score');
+const gamesPlayedEl = document.getElementById('gamesPlayed');
+const highScoreEl = document.getElementById('highScore');
+const averageScoreEl = document.getElementById('averageScore');
 const percentageFillEl = document.getElementById('percentage-fill');
 const markerTextEl = document.getElementById('marker-text');
 
@@ -206,14 +209,66 @@ function calculateWordScore(solved) {
     return previousScore;
 }
 
+function calculateScoreAverage(average, gamesPlayed, score) {
+    const newAverage = ((average * gamesPlayed) + score) / (gamesPlayed + 1);
+    return newAverage || score;
+}
+
+function getHighScore(highScore, score) {
+    if(!(!!highScore)) {
+        return score;
+    }
+    return (score > highScore) ? score : highScore;
+}
+
+function getHistory(history, score) {
+    // should keep them in order
+    if(history) {
+        return [...history, score];
+    }
+
+    return [score];
+}
+
+function finalScoreCalculations(score) {
+    const cached = JSON.parse(localStorage.getItem('dscrmbl'));
+    let average = calculateScoreAverage(cached?.average, cached?.gamesPlayed, score);
+    let gamesPlayed = (cached?.gamesPlayed + 1) || 1;
+    let highScore = getHighScore(cached?.highScore, score);
+    let history = getHistory(cached?.history, score)
+
+    console.log(cached, !!cached);
+    const cachedScore = {
+        score: score,
+        average: average,
+        gamesPlayed: gamesPlayed,
+        highScore: highScore,
+        history: history
+    }
+
+    localStorage.setItem('dscrmbl', JSON.stringify(cachedScore));
+
+    return cachedScore;
+}
+
 function showFinalScoreModal(solved) {
-    scoreEl.innerText = document.getElementsByClassName('word')[4].innerText;
+    const finalScore = document.getElementsByClassName('word')[4].innerText;
+    scoreEl.innerText = finalScore;
+
+    const finalScores = finalScoreCalculations(Number(finalScore));
+    gamesPlayedEl.innerText = finalScores.gamesPlayed;
+    highScoreEl.innerText = finalScores.highScore;
+    averageScoreEl.innerText = Math.round(finalScores.average);
+
     finalScoreModalEl.classList.remove('display-none');
     finalScoreModalEl.classList.add('show-modal');
 
     setTimeout(() => {
+        const percentage = '63%' //need to calculate
+        percentageFillEl.style.width = percentage;
         percentageFillEl.classList.add('fill-effect');
-        markerTextEl.innerText = '75%'; // has to be calculated
+
+        markerTextEl.innerText = percentage; // has to be calculated
         markerTextEl.classList.add('marker-text-fade-in');
     }, 1000)
 }
