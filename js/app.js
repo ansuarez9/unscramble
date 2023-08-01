@@ -264,18 +264,6 @@ function finalScoreCalculations(score) {
     return {cachedScore, historyPercentile};
 }
 
-function hideMobileKeyboardOnReturn (keyboardEvent) {
-    element.addEventListener('keyup', (keyboardEvent) => {
-        if (keyboardEvent.code === 'Enter') {
-            element.blur();
-        }
-    });
-}
-
-document.querySelectorAll('[type=text]').forEach((element) => {
-    hideMobileKeyboardOnReturn(element);
-}); 
-
 function showFinalScoreModal(solved) {
     const finalScore = document.getElementsByClassName('word')[4].innerText;
     scoreEl.innerText = finalScore;
@@ -346,6 +334,8 @@ function handleSubmitClick() {
     }
 
     if(playableList.length === 0 && (attempts === 4 || correct)){
+        // blur input field to try to force the keyboard to collapse on mobile devices
+        userInput.blur();
         setTimeout(showFinalScoreModal, 1500);
     }
 
