@@ -264,6 +264,18 @@ function finalScoreCalculations(score) {
     return {cachedScore, historyPercentile};
 }
 
+function hideMobileKeyboardOnReturn (keyboardEvent) {
+    element.addEventListener('keyup', (keyboardEvent) => {
+        if (keyboardEvent.code === 'Enter') {
+            element.blur();
+        }
+    });
+}
+
+document.querySelectorAll('[type=text]').forEach((element) => {
+    hideMobileKeyboardOnReturn(element);
+}); 
+
 function showFinalScoreModal(solved) {
     const finalScore = document.getElementsByClassName('word')[4].innerText;
     scoreEl.innerText = finalScore;
