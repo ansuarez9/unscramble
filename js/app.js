@@ -277,6 +277,8 @@ function showFinalScoreModal(solved) {
     finalScoreModalEl.classList.add('show-modal');
 
     setTimeout(() => {
+        // and scroll to bottom of page
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
         const percentage = `${historyPercentile.percentile}%`;
         percentageFillEl.style.width = percentage;
         percentageFillEl.classList.add('fill-effect');
@@ -334,7 +336,7 @@ function handleSubmitClick() {
     }
 
     if(playableList.length === 0 && (attempts === 4 || correct)){
-        // blur input field to try to force the keyboard to collapse on mobile devices
+        // blur input field to try to force the keyboard to collapse on mobile devices,
         userInput.blur();
         setTimeout(showFinalScoreModal, 1500);
     }
