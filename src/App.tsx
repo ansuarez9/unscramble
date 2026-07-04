@@ -14,6 +14,8 @@ import { ProgressTrack } from './components/Game/ProgressTrack';
 import { InstructionsModal } from './components/Modals/InstructionsModal';
 import { FinalScoreModal } from './components/Modals/FinalScoreModal';
 import { ContactModal } from './components/Modals/ContactModal';
+// Monetization disabled — re-enable when ready
+// import { MerchModal } from './components/Modals/MerchModal';
 import { HighScoreCelebration } from './components/Effects/HighScoreCelebration';
 import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useDailyTheme } from './hooks/useDailyTheme';
@@ -21,6 +23,9 @@ import { useTimer } from './hooks/useTimer';
 import { calculateFinalScore } from './utils/scoring';
 import { getTimeUntilNextDay } from './utils/seededRandom';
 import { isValidWord, isDictionaryLoaded } from './utils/dictionary';
+import { getSpecialEventEmoji } from './utils/specialEvent';
+// Monetization disabled — re-enable when ready (used for sponsor + merch tracking)
+// import { trackGameEvent } from './utils/analytics';
 import type { DailyStats, HistoryPercentile } from './types/game';
 
 function GameContent() {
@@ -32,6 +37,8 @@ function GameContent() {
   const [showInstructions, setShowInstructions] = useState(false);
   const [showFinalScore, setShowFinalScore] = useState(false);
   const [showContact, setShowContact] = useState(false);
+  // Monetization disabled — re-enable when ready
+  // const [showMerch, setShowMerch] = useState(false);
   const [finalStats, setFinalStats] = useState<DailyStats | null>(null);
   const [finalPercentile, setFinalPercentile] = useState<HistoryPercentile>({ history: [], percentile: 100 });
   const [countdown, setCountdown] = useState('--:--:--');
@@ -278,6 +285,12 @@ function GameContent() {
     }
   }, [state.phase, resetGame]);
 
+  // Monetization disabled — re-enable when ready
+  // const handleMerchOpen = useCallback(() => {
+  //   trackGameEvent.merchModalOpen();
+  //   setShowMerch(true);
+  // }, []);
+
   // Already played today
   if (!canPlayToday && state.phase === 'idle') {
     return (
@@ -308,6 +321,9 @@ function GameContent() {
 
         <InstructionsModal isOpen={showInstructions} onClose={() => setShowInstructions(false)} />
         <ContactModal isOpen={showContact} onClose={() => setShowContact(false)} />
+        {/* Monetization disabled — re-enable when ready
+        <MerchModal isOpen={showMerch} onClose={() => setShowMerch(false)} />
+        */}
 
         <FinalScoreModal
           isOpen={showFinalScore}
@@ -347,8 +363,40 @@ function GameContent() {
       {/* Theme Display - always show when available */}
       {theme && !isThemeLoading && (
         <div className="theme-display">
+          {theme.specialEvent && (
+            <div className="theme-special-event">
+              {getSpecialEventEmoji(theme.specialEvent)} {theme.specialEvent}
+            </div>
+          )}
           <div className="theme-name">{theme.themeName}</div>
           <div className="theme-description">{theme.description}</div>
+          {/* Monetization disabled — re-enable when ready
+          {theme.sponsor && (
+            theme.sponsor.url ? (
+              <a
+                className="sponsor-chip"
+                href={theme.sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackGameEvent.sponsorClick(theme.sponsor!.name)}
+              >
+                <span className="sponsor-chip-label">Brought to you by</span>
+                <span className="sponsor-chip-name">{theme.sponsor.name}</span>
+                {theme.sponsor.tagline && (
+                  <span className="sponsor-chip-tagline">{theme.sponsor.tagline}</span>
+                )}
+              </a>
+            ) : (
+              <div className="sponsor-chip sponsor-chip--static">
+                <span className="sponsor-chip-label">Brought to you by</span>
+                <span className="sponsor-chip-name">{theme.sponsor.name}</span>
+                {theme.sponsor.tagline && (
+                  <span className="sponsor-chip-tagline">{theme.sponsor.tagline}</span>
+                )}
+              </div>
+            )
+          )}
+          */}
         </div>
       )}
 
@@ -433,6 +481,9 @@ function GameContent() {
       {/* Modals */}
       <InstructionsModal isOpen={showInstructions} onClose={() => setShowInstructions(false)} />
       <ContactModal isOpen={showContact} onClose={() => setShowContact(false)} />
+      {/* Monetization disabled — re-enable when ready
+      <MerchModal isOpen={showMerch} onClose={() => setShowMerch(false)} />
+      */}
 
       <FinalScoreModal
         isOpen={showFinalScore}
