@@ -2,8 +2,9 @@ import { useEffect, useState, useCallback, useRef } from 'react';
 import { CyberButton } from '../Buttons/CyberButton';
 import { generateShareText, copyToClipboard, canUseWebShare, shareViaWeb } from '../../utils/share';
 import { useAudioContext } from '../../context/AudioContext';
-import { trackGameEvent } from '../../utils/analytics';
-import { TIP_JAR_URL } from '../../config/monetization';
+// Monetization disabled — re-enable when ready
+// import { trackGameEvent } from '../../utils/analytics';
+// import { TIP_JAR_URL } from '../../config/monetization';
 import type { DailyStats, WordResult, HistoryPercentile } from '../../types/game';
 
 interface FinalScoreModalProps {
@@ -245,6 +246,7 @@ export function FinalScoreModal({
           {shareText}
         </CyberButton>
 
+        {/* Monetization disabled — re-enable when ready
         <a
           className="tip-jar-link"
           href={TIP_JAR_URL}
@@ -254,6 +256,7 @@ export function FinalScoreModal({
         >
           Enjoying DSCRMBL? <span className="tip-jar-link-cta">Buy us a coffee {String.fromCodePoint(0x2615)}</span>
         </a>
+        */}
       </div>
     </div>
   );

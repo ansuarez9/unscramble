@@ -14,7 +14,8 @@ import { ProgressTrack } from './components/Game/ProgressTrack';
 import { InstructionsModal } from './components/Modals/InstructionsModal';
 import { FinalScoreModal } from './components/Modals/FinalScoreModal';
 import { ContactModal } from './components/Modals/ContactModal';
-import { MerchModal } from './components/Modals/MerchModal';
+// Monetization disabled — re-enable when ready
+// import { MerchModal } from './components/Modals/MerchModal';
 import { HighScoreCelebration } from './components/Effects/HighScoreCelebration';
 import { useDailyChallenge } from './hooks/useDailyChallenge';
 import { useDailyTheme } from './hooks/useDailyTheme';
@@ -23,7 +24,8 @@ import { calculateFinalScore } from './utils/scoring';
 import { getTimeUntilNextDay } from './utils/seededRandom';
 import { isValidWord, isDictionaryLoaded } from './utils/dictionary';
 import { getSpecialEventEmoji } from './utils/specialEvent';
-import { trackGameEvent } from './utils/analytics';
+// Monetization disabled — re-enable when ready (used for sponsor + merch tracking)
+// import { trackGameEvent } from './utils/analytics';
 import type { DailyStats, HistoryPercentile } from './types/game';
 
 function GameContent() {
@@ -35,7 +37,8 @@ function GameContent() {
   const [showInstructions, setShowInstructions] = useState(false);
   const [showFinalScore, setShowFinalScore] = useState(false);
   const [showContact, setShowContact] = useState(false);
-  const [showMerch, setShowMerch] = useState(false);
+  // Monetization disabled — re-enable when ready
+  // const [showMerch, setShowMerch] = useState(false);
   const [finalStats, setFinalStats] = useState<DailyStats | null>(null);
   const [finalPercentile, setFinalPercentile] = useState<HistoryPercentile>({ history: [], percentile: 100 });
   const [countdown, setCountdown] = useState('--:--:--');
@@ -282,16 +285,17 @@ function GameContent() {
     }
   }, [state.phase, resetGame]);
 
-  const handleMerchOpen = useCallback(() => {
-    trackGameEvent.merchModalOpen();
-    setShowMerch(true);
-  }, []);
+  // Monetization disabled — re-enable when ready
+  // const handleMerchOpen = useCallback(() => {
+  //   trackGameEvent.merchModalOpen();
+  //   setShowMerch(true);
+  // }, []);
 
   // Already played today
   if (!canPlayToday && state.phase === 'idle') {
     return (
       <GameContainer>
-        <Header onInstructionsClick={() => setShowInstructions(true)} onContactClick={() => setShowContact(true)} onMerchClick={handleMerchOpen} />
+        <Header onInstructionsClick={() => setShowInstructions(true)} onContactClick={() => setShowContact(true)} />
 
         <div id="already-played" className="already-played">
           <div className="already-played-content">
@@ -317,7 +321,9 @@ function GameContent() {
 
         <InstructionsModal isOpen={showInstructions} onClose={() => setShowInstructions(false)} />
         <ContactModal isOpen={showContact} onClose={() => setShowContact(false)} />
+        {/* Monetization disabled — re-enable when ready
         <MerchModal isOpen={showMerch} onClose={() => setShowMerch(false)} />
+        */}
 
         <FinalScoreModal
           isOpen={showFinalScore}
@@ -339,7 +345,7 @@ function GameContent() {
 
   return (
     <GameContainer>
-      <Header onInstructionsClick={() => setShowInstructions(true)} onContactClick={() => setShowContact(true)} onMerchClick={handleMerchOpen} />
+      <Header onInstructionsClick={() => setShowInstructions(true)} onContactClick={() => setShowContact(true)} />
 
       {/* Settings Panel - only show before game starts */}
       {state.phase === 'idle' && !isComplete && (
@@ -364,6 +370,7 @@ function GameContent() {
           )}
           <div className="theme-name">{theme.themeName}</div>
           <div className="theme-description">{theme.description}</div>
+          {/* Monetization disabled — re-enable when ready
           {theme.sponsor && (
             theme.sponsor.url ? (
               <a
@@ -389,6 +396,7 @@ function GameContent() {
               </div>
             )
           )}
+          */}
         </div>
       )}
 
@@ -473,7 +481,9 @@ function GameContent() {
       {/* Modals */}
       <InstructionsModal isOpen={showInstructions} onClose={() => setShowInstructions(false)} />
       <ContactModal isOpen={showContact} onClose={() => setShowContact(false)} />
+      {/* Monetization disabled — re-enable when ready
       <MerchModal isOpen={showMerch} onClose={() => setShowMerch(false)} />
+      */}
 
       <FinalScoreModal
         isOpen={showFinalScore}

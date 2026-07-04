@@ -1,14 +1,15 @@
 import { useThemeContext } from '../../context/ThemeContext';
-import { trackGameEvent } from '../../utils/analytics';
-import { TIP_JAR_URL } from '../../config/monetization';
+// Monetization disabled — re-enable when ready
+// import { trackGameEvent } from '../../utils/analytics';
+// import { TIP_JAR_URL } from '../../config/monetization';
 
 interface HeaderProps {
   onInstructionsClick: () => void;
   onContactClick: () => void;
-  onMerchClick: () => void;
+  // onMerchClick: () => void;
 }
 
-export function Header({ onInstructionsClick, onContactClick, onMerchClick }: HeaderProps) {
+export function Header({ onInstructionsClick, onContactClick }: HeaderProps) {
   const { lightMode, toggleTheme } = useThemeContext();
 
   return (
@@ -20,6 +21,7 @@ export function Header({ onInstructionsClick, onContactClick, onMerchClick }: He
           <span className="version-tag">v2.0</span>
         </div>
         <div className="header-actions">
+          {/* Monetization disabled — re-enable when ready
           <a
             className="icon-btn icon-btn--tip"
             href={TIP_JAR_URL}
@@ -41,6 +43,7 @@ export function Header({ onInstructionsClick, onContactClick, onMerchClick }: He
             <span className="icon-glow"></span>
             <span className="icon-text">{String.fromCodePoint(0x1F455)}</span>
           </button>
+          */}
           <button
             className="icon-btn"
             title="Contact / Suggestions"
