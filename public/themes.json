@@ -105,7 +105,7 @@
       "creek",
       "stream",
       "cascade",
-      "waterway",
+      "lagoon",
       "reservoir"
     ]
   },
@@ -402,7 +402,7 @@
       "lunar",
       "shadow",
       "starlit",
-      "midnight",
+      "twilight",
       "moonlight"
     ]
   },
@@ -612,7 +612,7 @@
       "orchid",
       "jasmine",
       "marigold",
-      "sunflower"
+      "daffodil"
     ]
   },
   "2026-03-23": {
@@ -675,7 +675,7 @@
     "description": "Games and brain teasers",
     "wordList": [
       "chess",
-      "puzzle",
+      "sudoku",
       "mystery",
       "charades",
       "crossword"
@@ -788,7 +788,7 @@
       "bishop",
       "endgame",
       "castling",
-      "checkmate"
+      "gambit"
     ]
   },
   "2026-04-08": {
@@ -807,7 +807,7 @@
     "description": "Winter sports and skiing",
     "wordList": [
       "slope",
-      "powder",
+      "flurries",
       "gondola",
       "snowfall",
       "frostbite"
@@ -905,7 +905,7 @@
     "themeName": "SWEET DREAMS",
     "description": "Sleep and slumber terms",
     "wordList": [
-      "dream",
+      "reverie",
       "pillow",
       "slumber",
       "insomnia",
@@ -1119,7 +1119,7 @@
       "cirrus",
       "cumulus",
       "stratus",
-      "thunderhead"
+      "overcast"
     ]
   },
   "2026-05-08": {
@@ -1326,7 +1326,7 @@
     "themeName": "BACKYARD GRILL",
     "description": "Barbecue essentials",
     "wordList": [
-      "grill",
+      "skewers",
       "brisket",
       "charcoal",
       "marinade",
@@ -1429,7 +1429,7 @@
       "paring",
       "cleaver",
       "serrated",
-      "sharpener"
+      "whetstone"
     ]
   },
   "2026-06-05": {
@@ -1484,7 +1484,7 @@
       "pupil",
       "retina",
       "goggles",
-      "eyesight",
+      "monocle",
       "spectacles"
     ]
   },
@@ -1492,11 +1492,11 @@
     "themeName": "DOUGH BOY",
     "description": "Bread and the art of baking",
     "wordList": [
-      "dough",
+      "pastry",
       "yeast",
       "knead",
       "baguette",
-      "sourdough"
+      "ciabatta"
     ]
   },
   "2026-06-11": {
@@ -1516,7 +1516,7 @@
     "description": "Lazy hot days",
     "wordList": [
       "sunny",
-      "summer",
+      "beachy",
       "poolside",
       "vacation",
       "lemonade"
@@ -1549,7 +1549,7 @@
     "themeName": "HORSEPOWER",
     "description": "Equestrian world",
     "wordList": [
-      "horse",
+      "stallion",
       "saddle",
       "gallop",
       "mustang",
@@ -1605,7 +1605,7 @@
     "themeName": "GROOVY THREADS",
     "description": "Sixties and seventies fashion",
     "wordList": [
-      "groovy",
+      "boogie",
       "tiedye",
       "paisley",
       "platform",
@@ -1616,7 +1616,7 @@
     "themeName": "PROUD POPS",
     "description": "A toast to dads",
     "wordList": [
-      "proud",
+      "legacy",
       "wisdom",
       "advice",
       "fishing",
@@ -1662,7 +1662,7 @@
     "description": "Tile and pattern work",
     "wordList": [
       "grout",
-      "mosaic",
+      "shards",
       "ceramic",
       "pattern",
       "terracotta"
@@ -1720,7 +1720,7 @@
       "median",
       "middle",
       "halfway",
-      "midpoint"
+      "central"
     ]
   },
   "2026-07-01": {
@@ -1807,7 +1807,7 @@
     "description": "Sand between your toes",
     "wordList": [
       "sandy",
-      "beach",
+      "seashore",
       "shells",
       "umbrella",
       "oceanside"
@@ -1828,7 +1828,7 @@
     "themeName": "ROLLING THUNDER",
     "description": "Summer storms",
     "wordList": [
-      "thunder",
+      "squall",
       "tempest",
       "monsoon",
       "downpour",
@@ -1906,7 +1906,7 @@
     "themeName": "RHYME TIME",
     "description": "Words from nursery rhymes",
     "wordList": [
-      "rhymes",
+      "ditty",
       "mother",
       "nursery",
       "lullaby",
@@ -1917,7 +1917,7 @@
     "themeName": "STITCH BY STITCH",
     "description": "The art of sewing",
     "wordList": [
-      "stitch",
+      "needle",
       "thread",
       "button",
       "fabric",
@@ -1963,7 +1963,7 @@
     "themeName": "TRAIL MIX",
     "description": "On the hiking trail",
     "wordList": [
-      "trail",
+      "summit",
       "boots",
       "compass",
       "trekking",
@@ -1987,8 +1987,8 @@
     "wordList": [
       "wages",
       "salary",
-      "payroll",
-      "paycheck",
+      "stipend",
+      "earnings",
       "commission"
     ]
   },
@@ -2051,7 +2051,7 @@
     "themeName": "BUDDY SYSTEM",
     "description": "Friendship and bonds",
     "wordList": [
-      "buddy",
+      "friend",
       "allies",
       "comrade",
       "partner",
@@ -2062,7 +2062,7 @@
     "themeName": "FAMILY TREE",
     "description": "Generations and kin",
     "wordList": [
-      "family",
+      "lineage",
       "cousins",
       "siblings",
       "grandkids",
@@ -2075,7 +2075,7 @@
     "wordList": [
       "wheat",
       "tractor",
-      "barnyard",
+      "silo",
       "haystack",
       "cornfield"
     ]
@@ -2096,7 +2096,7 @@
     "description": "Television land",
     "wordList": [
       "drama",
-      "prime",
+      "evening",
       "sitcom",
       "reruns",
       "miniseries"
@@ -2183,7 +2183,7 @@
     "themeName": "WHALE OF A TIME",
     "description": "Cetaceans of the deep",
     "wordList": [
-      "whale",
+      "orca",
       "beluga",
       "narwhal",
       "dolphin",
@@ -2198,7 +2198,7 @@
       "italic",
       "kerning",
       "graphic",
-      "typeface"
+      "ligature"
     ]
   },
   "2026-08-13": {
@@ -2206,7 +2206,7 @@
     "description": "Superstitions and fortune",
     "wordList": [
       "charm",
-      "lucky",
+      "omen",
       "magic",
       "fortune",
       "talisman"
@@ -2240,7 +2240,7 @@
     "wordList": [
       "canoe",
       "kayaks",
-      "paddle",
+      "oars",
       "rafting",
       "windsurfing"
     ]
@@ -2262,7 +2262,7 @@
     "wordList": [
       "mummy",
       "sphinx",
-      "pyramid",
+      "obelisk",
       "pharaoh",
       "hieroglyph"
     ]
@@ -2293,9 +2293,9 @@
     "themeName": "GRAND OPENING",
     "description": "Launching a business",
     "wordList": [
-      "grand",
+      "ribbon",
       "launch",
-      "opening",
+      "debut",
       "business",
       "enterprise"
     ]
@@ -2337,7 +2337,7 @@
     "themeName": "OPEN HOUSE",
     "description": "Real estate hunt",
     "wordList": [
-      "house",
+      "foyer",
       "listing",
       "realtor",
       "staging",
@@ -2348,7 +2348,7 @@
     "themeName": "WOMEN'S WORK",
     "description": "Honoring the suffrage movement",
     "wordList": [
-      "women",
+      "ladies",
       "voting",
       "pioneer",
       "equality",
@@ -2361,7 +2361,7 @@
     "description": "Heat from the kitchen",
     "wordList": [
       "chili",
-      "pepper",
+      "grinder",
       "paprika",
       "habanero",
       "jalapeno"
@@ -2393,7 +2393,7 @@
     "themeName": "GREAT ESCAPE",
     "description": "Getaways and respite",
     "wordList": [
-      "escape",
+      "vacation",
       "retreat",
       "getaway",
       "respite",
@@ -2406,7 +2406,7 @@
     "wordList": [
       "ending",
       "endless",
-      "goodbye",
+      "farewell",
       "fleeting",
       "twilight"
     ]
@@ -2427,7 +2427,7 @@
     "description": "Early fall arrives",
     "wordList": [
       "crisp",
-      "autumn",
+      "foliage",
       "leaves",
       "harvest",
       "fireside"
@@ -2450,7 +2450,7 @@
     "wordList": [
       "velcro",
       "button",
-      "zippers",
+      "fasten",
       "buckles",
       "shoelace"
     ]
@@ -2549,7 +2549,7 @@
     "themeName": "WISE ELDERS",
     "description": "Honoring grandparents",
     "wordList": [
-      "elders",
+      "mentors",
       "wisdom",
       "legacy",
       "grandma",
@@ -2573,7 +2573,7 @@
     "description": "Up in the alpine",
     "wordList": [
       "ridge",
-      "peaks",
+      "granite",
       "alpine",
       "summit",
       "majestic"
@@ -2607,7 +2607,7 @@
     "themeName": "RUSTIC CHARM",
     "description": "Country home decor",
     "wordList": [
-      "rustic",
+      "cabin",
       "wooden",
       "vintage",
       "antique",
@@ -2618,7 +2618,7 @@
     "themeName": "ARRR MATEY",
     "description": "Pirate parlance",
     "wordList": [
-      "matey",
+      "plunder",
       "shanty",
       "parrot",
       "scallywag",
@@ -2631,7 +2631,7 @@
     "description": "Chicken for dinner",
     "wordList": [
       "chicken",
-      "tenders",
+      "wings",
       "nuggets",
       "drumstick",
       "rotisserie"
@@ -2655,7 +2655,7 @@
       "shadow",
       "season",
       "equinox",
-      "daylight",
+      "sunrise",
       "hemisphere"
     ],
     "specialEvent": "Autumn Equinox"
@@ -2689,7 +2689,7 @@
       "sleuth",
       "suspect",
       "mystery",
-      "whodunit",
+      "clues",
       "detective"
     ]
   },
@@ -2734,7 +2734,7 @@
       "tiles",
       "tokens",
       "playing",
-      "gameplay"
+      "dice"
     ]
   },
   "2026-09-30": {
@@ -2755,7 +2755,7 @@
       "pecan",
       "almond",
       "cashew",
-      "walnut",
+      "chestnut",
       "hazelnut"
     ]
   },
@@ -2776,7 +2776,7 @@
     "wordList": [
       "saute",
       "simmer",
-      "recipe",
+      "braise",
       "garnish",
       "technique"
     ]
@@ -2800,14 +2800,14 @@
       "karaoke",
       "audience",
       "spotlight",
-      "microphone"
+      "comedy"
     ]
   },
   "2026-10-06": {
     "themeName": "CRACK THE CODE",
     "description": "Programming and hacking",
     "wordList": [
-      "coder",
+      "cipher",
       "hacker",
       "binary",
       "software",
@@ -2830,7 +2830,7 @@
     "description": "Home heating",
     "wordList": [
       "heater",
-      "boiler",
+      "ductwork",
       "furnace",
       "radiator",
       "thermostat"
@@ -2843,7 +2843,7 @@
       "bravo",
       "cheer",
       "ovation",
-      "applause",
+      "clapping",
       "standing"
     ]
   },
@@ -2855,7 +2855,7 @@
       "couch",
       "nestle",
       "comfort",
-      "homestead"
+      "hearth"
     ]
   },
   "2026-10-11": {
@@ -2865,7 +2865,7 @@
       "shine",
       "bling",
       "sequin",
-      "glitter",
+      "jewels",
       "sparkle"
     ]
   },
@@ -2887,7 +2887,7 @@
     "wordList": [
       "adage",
       "maxim",
-      "saying",
+      "motto",
       "proverb",
       "aphorism"
     ]
@@ -2907,7 +2907,7 @@
     "themeName": "AT THE OPERA",
     "description": "Operatic terms",
     "wordList": [
-      "opera",
+      "aria",
       "tenor",
       "soprano",
       "orchestra",
@@ -2964,7 +2964,7 @@
     "description": "Sports drafts and stats",
     "wordList": [
       "rookie",
-      "fantasy",
+      "draft",
       "playoffs",
       "standings",
       "benchwarmer"
@@ -2975,7 +2975,7 @@
     "description": "Hotel hospitality",
     "wordList": [
       "lobby",
-      "suite",
+      "valet",
       "bellhop",
       "checkin",
       "concierge"
@@ -3020,7 +3020,7 @@
     "description": "Formal evening wear",
     "wordList": [
       "formal",
-      "bowtie",
+      "lapel",
       "tuxedo",
       "elegant",
       "accessory"
@@ -3032,7 +3032,7 @@
     "wordList": [
       "ghoul",
       "zombie",
-      "undead",
+      "ghost",
       "corpse",
       "revenant"
     ]
@@ -3042,7 +3042,7 @@
     "description": "Eight-legged things",
     "wordList": [
       "spider",
-      "webbed",
+      "silken",
       "scuttle",
       "arachnid",
       "tarantula"
@@ -3052,7 +3052,7 @@
     "themeName": "CANDY CRUSH",
     "description": "Sugary loot",
     "wordList": [
-      "candy",
+      "sugar",
       "taffy",
       "gummy",
       "lollipop",
@@ -3067,7 +3067,7 @@
       "creepy",
       "spooky",
       "horror",
-      "nightmare"
+      "phantom"
     ]
   },
   "2026-10-30": {
@@ -3078,7 +3078,7 @@
       "costume",
       "disguise",
       "facepaint",
-      "masquerade"
+      "gala"
     ]
   },
   "2026-10-31": {
@@ -3109,7 +3109,7 @@
     "themeName": "ALL SAINTS",
     "description": "Sacred and holy",
     "wordList": [
-      "saint",
+      "halo",
       "sacred",
       "pilgrim",
       "holyday",
@@ -3123,7 +3123,7 @@
       "polls",
       "voter",
       "ballot",
-      "voting",
+      "primary",
       "candidate"
     ],
     "specialEvent": "Election Day"
@@ -3144,7 +3144,7 @@
     "description": "Blacksmith's craft",
     "wordList": [
       "anvil",
-      "forge",
+      "hammer",
       "smith",
       "bellows",
       "ironwork"
@@ -3165,7 +3165,7 @@
     "themeName": "ATTIC FIND",
     "description": "Hidden treasures",
     "wordList": [
-      "attic",
+      "dusty",
       "boxes",
       "trunk",
       "treasure",
@@ -3176,7 +3176,7 @@
     "themeName": "FESTIVAL OF LIGHTS",
     "description": "Diwali brings light to the darkness",
     "wordList": [
-      "lights",
+      "candles",
       "bright",
       "lantern",
       "radiance",
@@ -3189,7 +3189,7 @@
     "description": "Winter is creeping in",
     "wordList": [
       "frost",
-      "chill",
+      "breeze",
       "parka",
       "gloves",
       "shiver"
@@ -3212,7 +3212,7 @@
     "wordList": [
       "salute",
       "badges",
-      "service",
+      "medals",
       "veteran",
       "sergeant"
     ],
@@ -3224,7 +3224,7 @@
     "wordList": [
       "thesis",
       "campus",
-      "lecture",
+      "seminar",
       "studies",
       "professor"
     ]
@@ -3237,7 +3237,7 @@
       "hexes",
       "tarot",
       "jinxed",
-      "unlucky"
+      "omen"
     ]
   },
   "2026-11-14": {
@@ -3247,7 +3247,7 @@
       "timber",
       "planks",
       "sawdust",
-      "woodwork",
+      "lathe",
       "carpentry"
     ]
   },
@@ -3280,7 +3280,7 @@
       "petrol",
       "diesel",
       "nozzle",
-      "refill",
+      "pumping",
       "gasoline"
     ]
   },
@@ -3290,7 +3290,7 @@
     "wordList": [
       "pizza",
       "pasta",
-      "tomato",
+      "basil",
       "marinara",
       "pomodoro"
     ]
@@ -3324,7 +3324,7 @@
       "quill",
       "inkpot",
       "scribe",
-      "penmanship",
+      "nib",
       "calligraphy"
     ]
   },
@@ -3334,7 +3334,7 @@
     "wordList": [
       "volts",
       "wiring",
-      "circuit",
+      "resistor",
       "capacitor",
       "transistor"
     ]
@@ -3344,7 +3344,7 @@
     "description": "Direction and navigation",
     "wordList": [
       "arrow",
-      "north",
+      "polar",
       "bearing",
       "navigate",
       "direction"
@@ -3400,7 +3400,7 @@
     "themeName": "SHOP LOCAL",
     "description": "Supporting small business",
     "wordList": [
-      "local",
+      "nearby",
       "owner",
       "artisan",
       "boutique",
@@ -3436,7 +3436,7 @@
     "description": "Counting down to Christmas",
     "wordList": [
       "count",
-      "advent",
+      "season",
       "holiday",
       "december",
       "countdown"
@@ -3449,15 +3449,15 @@
       "ribbon",
       "present",
       "package",
-      "gifting",
-      "wrapping"
+      "giving",
+      "bows"
     ]
   },
   "2026-12-03": {
     "themeName": "JINGLE BELLS",
     "description": "Christmas classics",
     "wordList": [
-      "jingle",
+      "carols",
       "sleigh",
       "reindeer",
       "mistletoe",
@@ -3514,7 +3514,7 @@
     "themeName": "GOLDEN HOUR",
     "description": "The photographer's magic light",
     "wordList": [
-      "golden",
+      "amber",
       "sunset",
       "exposure",
       "portrait",
@@ -3537,7 +3537,7 @@
     "description": "Layering against the cold",
     "wordList": [
       "woolly",
-      "bundled",
+      "cozy",
       "thermal",
       "mittens",
       "layered"
@@ -3569,7 +3569,7 @@
     "themeName": "HOT COCOA",
     "description": "Warm winter drinks",
     "wordList": [
-      "cocoa",
+      "marshmallow",
       "latte",
       "cider",
       "eggnog",
@@ -3658,7 +3658,7 @@
     "description": "The shortest day of the year",
     "wordList": [
       "polar",
-      "longest",
+      "solstice",
       "moonrise",
       "darkness",
       "midwinter"
@@ -3703,7 +3703,7 @@
     "themeName": "MERRY MERRY",
     "description": "Christmas joy",
     "wordList": [
-      "merry",
+      "jolly",
       "joyful",
       "festive",
       "yuletide",
@@ -3731,7 +3731,7 @@
       "crafty",
       "sewing",
       "tinker",
-      "handmade"
+      "artisan"
     ]
   },
   "2026-12-28": {
@@ -3761,7 +3761,7 @@
     "description": "Looking back",
     "wordList": [
       "recap",
-      "review",
+      "chronicle",
       "summary",
       "flashback",
       "retrospect"
@@ -3817,11 +3817,11 @@
     "themeName": "BINGE WATCH",
     "description": "Streaming TV",
     "wordList": [
-      "binge",
+      "couch",
       "series",
       "stream",
       "episode",
-      "watching"
+      "marathon"
     ]
   },
   "2027-01-05": {
@@ -3840,7 +3840,7 @@
     "description": "Epiphany and the wise men",
     "wordList": [
       "myrrh",
-      "kings",
+      "epiphany",
       "camels",
       "wisemen",
       "procession"
@@ -3863,7 +3863,7 @@
     "description": "Vintage vibes",
     "wordList": [
       "retro",
-      "oldies",
+      "vinyl",
       "classic",
       "nostalgia",
       "throwback"
@@ -3895,9 +3895,9 @@
     "themeName": "MONDAY BLUES",
     "description": "Back to the grind",
     "wordList": [
-      "blues",
+      "gloomy",
       "grumpy",
-      "monday",
+      "workday",
       "weekday",
       "commute"
     ]
@@ -3974,7 +3974,7 @@
     "wordList": [
       "march",
       "peace",
-      "dream",
+      "unity",
       "justice",
       "nonviolence"
     ],
@@ -4029,7 +4029,7 @@
     "description": "Yoga poses and practice",
     "wordList": [
       "asana",
-      "namaste",
+      "lotus",
       "vinyasa",
       "downdog",
       "savasana"
@@ -4051,7 +4051,7 @@
     "description": "One year of DSCRMBL",
     "wordList": [
       "cycle",
-      "circle",
+      "orbit",
       "return",
       "revolve",
       "recurring"
@@ -4076,7 +4076,7 @@
       "lanes",
       "strike",
       "gutter",
-      "bowling",
+      "pinsetter",
       "tenpins"
     ]
   },
@@ -4131,7 +4131,7 @@
       "legacy",
       "leaders",
       "inventor",
-      "excellence",
+      "brilliance",
       "trailblazer"
     ],
     "specialEvent": "Black History Month"
@@ -4152,9 +4152,9 @@
     "themeName": "WHIPPED CREAM",
     "description": "Creamy and sweet",
     "wordList": [
-      "creamy",
+      "fluffy",
       "churned",
-      "whipped",
+      "dollop",
       "buttery",
       "frosting"
     ]
@@ -4163,7 +4163,7 @@
     "themeName": "FREE SPIRIT",
     "description": "The wandering soul",
     "wordList": [
-      "freedom",
+      "roaming",
       "nomadic",
       "unbound",
       "bohemian",
@@ -4200,7 +4200,7 @@
       "border",
       "tourist",
       "customs",
-      "passport",
+      "visa",
       "immigration"
     ]
   },
@@ -4267,8 +4267,8 @@
     "description": "Quiet crushes",
     "wordList": [
       "crush",
-      "admire",
-      "secret",
+      "yearn",
+      "anonymous",
       "longing",
       "mysterious"
     ]
@@ -4292,7 +4292,7 @@
       "cabinet",
       "congress",
       "inaugural",
-      "executive",
+      "oval",
       "presidency"
     ],
     "specialEvent": "Presidents Day"
@@ -4323,9 +4323,9 @@
     "themeName": "FOLDED PAPER",
     "description": "Origami art",
     "wordList": [
-      "paper",
+      "sheet",
       "crane",
-      "folded",
+      "crimped",
       "origami",
       "creases"
     ]
@@ -4348,7 +4348,7 @@
       "climate",
       "warming",
       "drought",
-      "wildfire",
+      "blaze",
       "hurricane"
     ]
   },
@@ -4402,9 +4402,9 @@
     "wordList": [
       "guppy",
       "tetra",
-      "goldfish",
+      "coral",
       "aquarium",
-      "angelfish"
+      "seahorse"
     ]
   },
   "2027-02-26": {
@@ -4422,7 +4422,7 @@
     "themeName": "FIVE STAR",
     "description": "Top reviews",
     "wordList": [
-      "stars",
+      "rating",
       "points",
       "grading",
       "critics",
@@ -4433,7 +4433,7 @@
     "themeName": "MOON PHASES",
     "description": "Waxing and waning",
     "wordList": [
-      "phases",
+      "lunar",
       "waxing",
       "waning",
       "gibbous",
@@ -4468,7 +4468,7 @@
     "wordList": [
       "dizzy",
       "tipsy",
-      "spinning",
+      "wobble",
       "unsteady",
       "dizziness"
     ]
@@ -4477,18 +4477,18 @@
     "themeName": "FRESH SQUEEZED",
     "description": "Juice it up",
     "wordList": [
-      "fresh",
+      "orange",
       "juicy",
       "citrus",
       "nectar",
-      "squeezed"
+      "pulpy"
     ]
   },
   "2027-03-05": {
     "themeName": "ON THE GREEN",
     "description": "Hit the links",
     "wordList": [
-      "green",
+      "putter",
       "bogey",
       "eagle",
       "birdie",
@@ -4536,8 +4536,8 @@
       "rescue",
       "signal",
       "trained",
-      "guarded",
-      "lifesaver"
+      "saved",
+      "buoy"
     ]
   },
   "2027-03-10": {
@@ -4555,7 +4555,7 @@
     "themeName": "REMOTE CONTROL",
     "description": "Couch potato essentials",
     "wordList": [
-      "remote",
+      "zapper",
       "volume",
       "channel",
       "clicker",
@@ -4567,7 +4567,7 @@
     "description": "Birthday celebrations",
     "wordList": [
       "party",
-      "wishes",
+      "candles",
       "presents",
       "birthday",
       "festivities"
@@ -4578,7 +4578,7 @@
     "description": "Cleaning and organizing",
     "wordList": [
       "swept",
-      "tidying",
+      "sorting",
       "polished",
       "spotless",
       "declutter"
@@ -4592,7 +4592,7 @@
       "numbers",
       "formula",
       "decimals",
-      "infinite"
+      "radius"
     ],
     "specialEvent": "Pi Day"
   },
@@ -4600,7 +4600,7 @@
     "themeName": "BEWARE THE IDES",
     "description": "Caesar's downfall",
     "wordList": [
-      "beware",
+      "caesar",
       "senate",
       "warning",
       "prophecy",
@@ -4636,7 +4636,7 @@
     "description": "Light through a prism",
     "wordList": [
       "prism",
-      "rainbow",
+      "arch",
       "spectrum",
       "refracted",
       "kaleidoscope"
@@ -4650,14 +4650,14 @@
       "portal",
       "avenue",
       "gateway",
-      "opening"
+      "threshold"
     ]
   },
   "2027-03-20": {
     "themeName": "VERNAL VIBES",
     "description": "Spring arrives",
     "wordList": [
-      "vernal",
+      "renewal",
       "thawing",
       "blossom",
       "equinox",
@@ -4691,7 +4691,7 @@
     "themeName": "COLOR PLAY",
     "description": "A festival of colors",
     "wordList": [
-      "color",
+      "holi",
       "powder",
       "vibrant",
       "fragrance",
@@ -4762,7 +4762,7 @@
       "inning",
       "bullpen",
       "homerun",
-      "baseball",
+      "pitcher",
       "shortstop"
     ],
     "specialEvent": "MLB Opening Day"
@@ -4795,7 +4795,7 @@
     "description": "Pulling a fast one",
     "wordList": [
       "trick",
-      "prank",
+      "jester",
       "gotcha",
       "foolery",
       "shenanigans"
@@ -4819,7 +4819,7 @@
     "wordList": [
       "poncho",
       "shower",
-      "raincoat",
+      "drizzle",
       "galoshes",
       "umbrella"
     ]
@@ -4853,7 +4853,7 @@
       "monday",
       "sunday",
       "tuesday",
-      "weekend",
+      "friday",
       "saturday"
     ]
   },
@@ -4865,7 +4865,7 @@
       "oatmeal",
       "granola",
       "smoothie",
-      "breakfast"
+      "pancakes"
     ]
   },
   "2027-04-08": {
@@ -4873,7 +4873,7 @@
     "description": "Bicycles and biking",
     "wordList": [
       "pedal",
-      "wheels",
+      "saddle",
       "helmet",
       "tandem",
       "handlebars"
@@ -4883,7 +4883,7 @@
     "themeName": "JUNK DRAWER",
     "description": "Random odds and ends",
     "wordList": [
-      "drawer",
+      "clutter",
       "random",
       "oddball",
       "assorted",
@@ -4931,7 +4931,7 @@
       "thrill",
       "extreme",
       "daredevil",
-      "adrenaline"
+      "skydive"
     ]
   },
   "2027-04-14": {
@@ -4950,7 +4950,7 @@
     "description": "Filing season",
     "wordList": [
       "audit",
-      "taxes",
+      "income",
       "filing",
       "deduction",
       "withholding"
@@ -4964,7 +4964,7 @@
       "panel",
       "comic",
       "villain",
-      "graphic",
+      "superhero",
       "illustration"
     ]
   },
@@ -4972,7 +4972,7 @@
     "themeName": "GOOD KARMA",
     "description": "Eastern philosophy",
     "wordList": [
-      "karma",
+      "balance",
       "faith",
       "dharma",
       "nirvana",
@@ -4997,7 +4997,7 @@
       "magma",
       "crater",
       "volcano",
-      "tectonic",
+      "fissure",
       "eruption"
     ]
   },
@@ -5020,7 +5020,7 @@
       "seder",
       "exodus",
       "haggadah",
-      "passover"
+      "freedom"
     ],
     "specialEvent": "Passover"
   },
@@ -5052,7 +5052,7 @@
     "themeName": "BANDS OF GOLD",
     "description": "Fine jewelry",
     "wordList": [
-      "bands",
+      "jewels",
       "pendant",
       "bracelet",
       "necklace",
@@ -5074,8 +5074,8 @@
     "themeName": "TAKE TWO",
     "description": "On the movie set",
     "wordList": [
-      "takes",
-      "retake",
+      "action",
+      "redo",
       "filming",
       "reshoot",
       "director"
@@ -5088,7 +5088,7 @@
       "energy",
       "turbine",
       "kinetic",
-      "windmill",
+      "blades",
       "renewable"
     ]
   },
@@ -5100,7 +5100,7 @@
       "gallery",
       "portrait",
       "abstract",
-      "masterpiece"
+      "exhibit"
     ]
   },
   "2027-04-29": {
@@ -5109,7 +5109,7 @@
     "wordList": [
       "decibel",
       "shouting",
-      "loudness",
+      "volume",
       "thunderous",
       "boisterous"
     ]
@@ -5131,7 +5131,7 @@
     "description": "May Day springtime traditions",
     "wordList": [
       "ribbons",
-      "maypole",
+      "streamers",
       "flowers",
       "garland",
       "springtime"
@@ -5142,7 +5142,7 @@
     "themeName": "RUN FOR THE ROSES",
     "description": "The Kentucky Derby",
     "wordList": [
-      "roses",
+      "derby",
       "juleps",
       "jockey",
       "bourbon",
